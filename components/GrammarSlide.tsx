@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { GrammarSlideData } from '../types';
-import { Check, X, ArrowRight, Eye, RefreshCw, AlertCircle } from 'lucide-react';
+import { GrammarSlideData, GrammarExercise } from '../types';
+import { Check, X, ArrowRight, Eye, RefreshCw, AlertCircle, Sparkles } from 'lucide-react';
 
 interface GrammarSlideProps {
   data: GrammarSlideData;
@@ -11,18 +11,31 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isAnswerRevealed, setIsAnswerRevealed] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  
+  // State for randomized content
+  const [activeExercises, setActiveExercises] = useState<GrammarExercise[]>([]);
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
 
-  // Reset state when slide data changes
+  // 1. Initialize and shuffle questions when the slide ID changes
   useEffect(() => {
+    const questions = [...data.exerciseSet.exercises];
+    // Fisher-Yates shuffle for questions
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+    setActiveExercises(questions);
     setCurrentIndex(0);
+    resetQuestionState();
   }, [data.id]);
 
-  // Handle shuffling and state reset whenever index or slide changes
+  // 2. Shuffle options whenever the current question changes or exercises are loaded
   useEffect(() => {
     resetQuestionState();
-    shuffleCurrentOptions();
-  }, [currentIndex, data.id]);
+    if (activeExercises.length > 0) {
+      shuffleCurrentOptions();
+    }
+  }, [currentIndex, activeExercises]);
 
   const resetQuestionState = () => {
     setSelectedOption(null);
@@ -31,10 +44,10 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   };
 
   const shuffleCurrentOptions = () => {
-    const exercise = data.exerciseSet.exercises[currentIndex];
+    const exercise = activeExercises[currentIndex];
     if (exercise) {
       const options = [...exercise.options];
-      // Fisher-Yates shuffle
+      // Fisher-Yates shuffle for options
       for (let i = options.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [options[i], options[j]] = [options[j], options[i]];
@@ -43,8 +56,12 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
     }
   };
 
-  const currentExercise = data.exerciseSet.exercises[currentIndex];
-  const isLastQuestion = currentIndex === data.exerciseSet.exercises.length - 1;
+  const currentExercise = activeExercises[currentIndex];
+  
+  // Avoid rendering if not ready
+  if (!currentExercise) return null;
+
+  const isLastQuestion = currentIndex === activeExercises.length - 1;
 
   // Theme configuration
   const themeConfig = {
@@ -84,6 +101,18 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
       buttonPrimary: 'bg-cyber-blue text-black hover:bg-blue-400 shadow-[0_0_15px_rgba(0,208,255,0.4)]',
       buttonSecondary: 'border-cyber-blue text-cyber-blue hover:bg-blue-900/30'
     },
+    pop: {
+      accent: 'text-cyber-pop',
+      border: 'border-cyber-pop',
+      glow: 'shadow-[0_0_20px_rgba(217,0,255,0.4)]',
+      bg: 'bg-fuchsia-900/20',
+      optionDefault: 'bg-black border-gray-700 text-gray-300 hover:border-cyber-pop hover:text-cyber-pop',
+      optionSelected: 'bg-fuchsia-900/40 border-cyber-pop text-cyber-pop shadow-[0_0_15px_rgba(217,0,255,0.3)]',
+      optionCorrect: 'bg-fuchsia-600 border-fuchsia-400 text-white shadow-[0_0_15px_rgba(217,0,255,0.6)]',
+      optionWrong: 'bg-red-900/40 border-red-500 text-red-400 opacity-60',
+      buttonPrimary: 'bg-cyber-pop text-white hover:bg-fuchsia-500 shadow-[0_0_15px_rgba(217,0,255,0.4)]',
+      buttonSecondary: 'border-cyber-pop text-cyber-pop hover:bg-fuchsia-900/30'
+    },
   };
 
   const theme = themeConfig[data.theme];
@@ -98,7 +127,7 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   };
 
   const handleNext = () => {
-    if (currentIndex < data.exerciseSet.exercises.length - 1) {
+    if (currentIndex < activeExercises.length - 1) {
       setCurrentIndex(prev => prev + 1);
     }
   };
@@ -119,19 +148,22 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
       {/* Header with Progress */}
       <div className="flex justify-between items-end mb-6 md:mb-10 border-b border-gray-800 pb-4 shrink-0">
          <div className="flex flex-col">
-             <span className={`text-sm md:text-base font-mono uppercase text-gray-500 mb-1`}>Protocol: {data.exerciseSet.title}</span>
+             <span className={`text-sm md:text-base font-mono uppercase text-gray-500 mb-1 flex items-center gap-2`}>
+               {data.theme === 'pop' && <Sparkles size={16} className="text-cyber-pop" />}
+               Protocol: {data.exerciseSet.title}
+             </span>
              <h2 className={`text-2xl md:text-4xl font-bold font-mono ${theme.accent} uppercase tracking-tight truncate`}>
                 {data.headline}
             </h2>
          </div>
          <div className="flex items-center gap-4">
              <div className="hidden md:flex gap-1">
-                 {data.exerciseSet.exercises.map((_, idx) => (
+                 {activeExercises.map((_, idx) => (
                      <div key={idx} className={`w-3 h-3 rounded-sm ${idx === currentIndex ? theme.accent.replace('text-', 'bg-') : idx < currentIndex ? 'bg-gray-600' : 'bg-gray-800'}`}></div>
                  ))}
              </div>
              <span className={`font-mono text-xl font-bold ${theme.accent}`}>
-                 {currentIndex + 1}<span className="text-gray-600 text-sm mx-1">/</span>{data.exerciseSet.exercises.length}
+                 {currentIndex + 1}<span className="text-gray-600 text-sm mx-1">/</span>{activeExercises.length}
              </span>
          </div>
       </div>

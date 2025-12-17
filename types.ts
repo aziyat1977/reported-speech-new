@@ -1,4 +1,4 @@
-export type SegmentTheme = 'green' | 'gold' | 'blue';
+export type SegmentTheme = 'green' | 'gold' | 'blue' | 'pop';
 
 export type SlideType = 'script' | 'concept' | 'grammar' | 'answer-key';
 

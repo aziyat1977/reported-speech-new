@@ -1300,26 +1300,237 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Final Exam: Mixed Protocols',
       exercises: [
-        // 1. Double Backshift (Past Perfect)
         { pre: 'He said, "I saw the glitch." ➡ He said he ', post: ' the glitch.', answer: 'had seen', options: ['had seen', 'saw', 'has seen', 'sees'] },
-        // 2. Modal (Must -> Had to)
         { pre: 'She said, "You must login." ➡ She said I ', post: ' login.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
-        // 3. Command (Negative)
         { pre: 'He shouted, "Don\'t touch!" ➡ He shouted at me ', post: ' touch.', answer: 'not to', options: ['not to', 'to not', 'don\'t', 'no'] },
-        // 4. Future in Past
         { pre: 'They said, "We will return." ➡ They said they ', post: ' return.', answer: 'would', options: ['would', 'will', 'are going to', 'can'] },
-        // 5. Present Perfect -> Past Perfect
         { pre: '"I have finished." ➡ He said he ', post: ' finished.', answer: 'had', options: ['had', 'has', 'have', 'was'] },
-        // 6. Universal Truth (Optional Backshift, but usually backshifted in narrative)
         { pre: '"Water boils at 100C." ➡ He explained that water ', post: ' at 100C.', answer: 'boiled', options: ['boiled', 'boils', 'has boiled', 'boil'] },
-        // 7. Wh- Question
         { pre: '"Where is the key?" ➡ He asked where the key ', post: '.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
-        // 8. Yes/No Question
         { pre: '"Are you ready?" ➡ He asked ', post: ' I was ready.', answer: 'if', options: ['if', 'that', 'did', 'what'] },
-        // 9. Passive Voice Reporting
         { pre: '"The file was deleted." ➡ He reported that the file ', post: ' deleted.', answer: 'had been', options: ['had been', 'was', 'has been', 'is'] },
-        // 10. Conditional Reporting
         { pre: '"If I knew, I would tell you." ➡ He said if he had known, he ', post: ' told me.', answer: 'would have', options: ['would have', 'would', 'will have', 'had'] },
+      ]
+    }
+  },
+
+  // ==========================================
+  // SEGMENT 7: KAHOOT POP CULTURE
+  // ==========================================
+
+  // --- KAHOOT 1: TIKTOK ---
+  {
+    id: '7-kahoot-1',
+    segmentTitle: 'POP CULTURE QUIZ',
+    slideTitle: 'TikTok Trends',
+    theme: 'pop',
+    type: 'grammar',
+    headline: 'VIRAL CHALLENGE',
+    visualAlt: 'TikTok Logo Neon',
+    exerciseSet: {
+      title: 'Topic: TikTok (15 Questions)',
+      exercises: [
+        { pre: '"I am going viral." ➡ He said he ', post: ' viral.', answer: 'was going', options: ['was going', 'is going', 'went', 'gone'] },
+        { pre: '"Don\'t leave me." ➡ He told me ', post: ' him.', answer: 'not to leave', options: ['not to leave', 'don\'t leave', 'not leave', 'to leave'] },
+        { pre: '"I found this hack yesterday." ➡ She said she ', post: ' that hack the day before.', answer: 'had found', options: ['had found', 'found', 'has found', 'finds'] },
+        { pre: '"You must watch this." ➡ He insisted I ', post: ' watch that.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        { pre: '"I can\'t stop scrolling." ➡ She admitted she ', post: ' stop scrolling.', answer: 'couldn\'t', options: ['couldn\'t', 'can\'t', 'not', 'wouldn\'t'] },
+        { pre: '"This song is trending." ➡ He noted the song ', post: ' trending.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"I will post it tomorrow." ➡ She said she ', post: ' post it the next day.', answer: 'would', options: ['would', 'will', 'could', 'should'] },
+        { pre: '"Have you seen this?" ➡ He asked if I ', post: ' seen that.', answer: 'had', options: ['had', 'have', 'did', 'was'] },
+        { pre: '"It blew up overnight." ➡ She claimed it ', post: ' up overnight.', answer: 'had blown', options: ['had blown', 'blew', 'has blown', 'blows'] },
+        { pre: '"I am filming a POV." ➡ He said he ', post: ' a POV.', answer: 'was filming', options: ['was filming', 'is filming', 'filmed', 'films'] },
+        { pre: '"Check the link in bio." ➡ She told us ', post: ' the link.', answer: 'to check', options: ['to check', 'check', 'checking', 'checked'] },
+        { pre: '"We are doing a collab." ➡ They said they ', post: ' a collab.', answer: 'were doing', options: ['were doing', 'are doing', 'did', 'done'] },
+        { pre: '"I might delete this later." ➡ He said he ', post: ' delete it later.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
+        { pre: '"Did you like the video?" ➡ He asked if I ', post: ' the video.', answer: 'had liked', options: ['had liked', 'liked', 'like', 'liking'] },
+        { pre: '"I have never used this sound." ➡ She said she ', post: ' never used that sound.', answer: 'had', options: ['had', 'has', 'have', 'did'] },
+      ]
+    }
+  },
+
+  // --- KAHOOT 2: K-POP ---
+  {
+    id: '7-kahoot-2',
+    segmentTitle: 'POP CULTURE QUIZ',
+    slideTitle: 'K-Pop Stan',
+    theme: 'pop',
+    type: 'grammar',
+    headline: 'IDOL UPDATE',
+    visualAlt: 'Lightstick Neon',
+    exerciseSet: {
+      title: 'Topic: K-Pop (15 Questions)',
+      exercises: [
+        { pre: '"BTS is taking a break." ➡ The news said BTS ', post: ' a break.', answer: 'was taking', options: ['was taking', 'is taking', 'took', 'taken'] },
+        { pre: '"I bought the album." ➡ She said she ', post: ' the album.', answer: 'had bought', options: ['had bought', 'bought', 'has bought', 'buys'] },
+        { pre: '"You should stream the MV." ➡ He said we ', post: ' stream the MV.', answer: 'should', options: ['should', 'would', 'could', 'must'] },
+        { pre: '"Blackpink will tour next year." ➡ YG stated Blackpink ', post: ' tour the following year.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"I can dance this choreo." ➡ He claimed he ', post: ' dance that choreo.', answer: 'could', options: ['could', 'can', 'should', 'would'] },
+        { pre: '"Did you see the teaser?" ➡ She asked if I ', post: ' the teaser.', answer: 'had seen', options: ['had seen', 'saw', 'see', 'seeing'] },
+        { pre: '"They have won the award." ➡ It was announced they ', post: ' the award.', answer: 'had won', options: ['had won', 'have won', 'won', 'win'] },
+        { pre: '"Don\'t touch my lightstick." ➡ He warned me ', post: ' his lightstick.', answer: 'not to touch', options: ['not to touch', 'don\'t touch', 'no touch', 'to touch'] },
+        { pre: '"My bias looks amazing." ➡ She thought her bias ', post: ' amazing.', answer: 'looked', options: ['looked', 'looks', 'looking', 'look'] },
+        { pre: '"I must get tickets." ➡ He realized he ', post: ' get tickets.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        { pre: '"We are waiting for the debut." ➡ Fans said they ', post: ' for the debut.', answer: 'were waiting', options: ['were waiting', 'are waiting', 'waited', 'wait'] },
+        { pre: '"Stray Kids ate this concept." ➡ She commented that Stray Kids ', post: ' that concept.', answer: 'had eaten', options: ['had eaten', 'ate', 'eats', 'eating'] },
+        { pre: '"I will learn Korean." ➡ He promised he ', post: ' learn Korean.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"Are you a blink?" ➡ She asked if I ', post: ' a blink.', answer: 'was', options: ['was', 'am', 'were', 'been'] },
+        { pre: '"NewJeans just dropped a banger." ➡ He said NewJeans ', post: ' just dropped a banger.', answer: 'had', options: ['had', 'has', 'have', 'did'] },
+      ]
+    }
+  },
+
+  // --- KAHOOT 3: ANIME ---
+  {
+    id: '7-kahoot-3',
+    segmentTitle: 'POP CULTURE QUIZ',
+    slideTitle: 'Anime Arc',
+    theme: 'pop',
+    type: 'grammar',
+    headline: 'SHONEN BATTLE',
+    visualAlt: 'Ninja Headband',
+    exerciseSet: {
+      title: 'Topic: Anime (15 Questions)',
+      exercises: [
+        { pre: '"I am going to become Hokage." ➡ Naruto said he ', post: ' going to become Hokage.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"You are already under my genjutsu." ➡ Itachi said I ', post: ' already under it.', answer: 'was', options: ['was', 'am', 'were', 'been'] },
+        { pre: '"I cannot forgive you." ➡ He shouted he ', post: ' forgive him.', answer: 'could not', options: ['could not', 'cannot', 'can not', 'will not'] },
+        { pre: '"Goku will win." ➡ Everyone knew Goku ', post: ' win.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"Don\'t give up!" ➡ He encouraged me ', post: ' give up.', answer: 'not to', options: ['not to', 'don\'t', 'no', 'to not'] },
+        { pre: '"I have eaten the fruit." ➡ Luffy said he ', post: ' the fruit.', answer: 'had eaten', options: ['had eaten', 'has eaten', 'ate', 'eats'] },
+        { pre: '"This power is over 9000." ➡ Vegeta screamed the power ', post: ' over 9000.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"I must protect my friends." ➡ Ichigo said he ', post: ' protect his friends.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        { pre: '"Did you see the Titan?" ➡ Eren asked if I ', post: ' the Titan.', answer: 'had seen', options: ['had seen', 'saw', 'see', 'seeing'] },
+        { pre: '"I will find the One Piece." ➡ He declared he ', post: ' find the One Piece.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"We are training for the exam." ➡ They said they ', post: ' for the exam.', answer: 'were training', options: ['were training', 'are training', 'trained', 'training'] },
+        { pre: '"Luffy ate the meat." ➡ Sanji complained Luffy ', post: ' the meat.', answer: 'had eaten', options: ['had eaten', 'ate', 'has eaten', 'eats'] },
+        { pre: '"You should use your Bankai." ➡ He suggested I ', post: ' use my Bankai.', answer: 'should', options: ['should', 'would', 'could', 'must'] },
+        { pre: '"It might be a trap." ➡ Armin warned it ', post: ' be a trap.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
+        { pre: '"I saved the village." ➡ He boasted he ', post: ' the village.', answer: 'had saved', options: ['had saved', 'saved', 'has saved', 'saves'] },
+      ]
+    }
+  },
+
+  // --- KAHOOT 4: FOOTBALL ---
+  {
+    id: '7-kahoot-4',
+    segmentTitle: 'POP CULTURE QUIZ',
+    slideTitle: 'Football Pitch',
+    theme: 'pop',
+    type: 'grammar',
+    headline: 'MATCH DAY',
+    visualAlt: 'Soccer Ball Neon',
+    exerciseSet: {
+      title: 'Topic: Football (15 Questions)',
+      exercises: [
+        { pre: '"Messi is the GOAT." ➡ He claimed Messi ', post: ' the GOAT.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"Ronaldo scored a hat-trick." ➡ The commentator said Ronaldo ', post: ' a hat-trick.', answer: 'had scored', options: ['had scored', 'scored', 'has scored', 'scores'] },
+        { pre: '"The ref is blind." ➡ The fans shouted the ref ', post: ' blind.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"We will win the World Cup." ➡ The captain promised they ', post: ' win.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"Don\'t fake the injury." ➡ The ref told him ', post: ' fake the injury.', answer: 'not to', options: ['not to', 'don\'t', 'no', 'to not'] },
+        { pre: '"I have signed for Chelsea." ➡ The player announced he ', post: ' for Chelsea.', answer: 'had signed', options: ['had signed', 'has signed', 'signed', 'signs'] },
+        { pre: '"Can you pass the ball?" ➡ He asked if I ', post: ' pass the ball.', answer: 'could', options: ['could', 'can', 'will', 'would'] },
+        { pre: '"Haaland is a robot." ➡ Everyone joked Haaland ', post: ' a robot.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"They were playing defensive." ➡ The pundit said they ', post: ' playing defensive.', answer: 'had been', options: ['had been', 'were', 'was', 'are'] },
+        { pre: '"I must score this penalty." ➡ He knew he ', post: ' score.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        { pre: '"Mbappe runs fast." ➡ He noted Mbappe ', post: ' fast.', answer: 'ran', options: ['ran', 'runs', 'run', 'running'] },
+        { pre: '"Did you see that goal?" ➡ He asked if I ', post: ' that goal.', answer: 'had seen', options: ['had seen', 'saw', 'see', 'seeing'] },
+        { pre: '"I am watching the replay." ➡ He said he ', post: ' the replay.', answer: 'was watching', options: ['was watching', 'is watching', 'watched', 'watches'] },
+        { pre: '"We might lose the league." ➡ The coach feared they ', post: ' lose.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
+        { pre: '"The manager has resigned." ➡ News broke that the manager ', post: ' resigned.', answer: 'had', options: ['had', 'has', 'have', 'did'] },
+      ]
+    }
+  },
+
+  // --- KAHOOT 5: CELEBS ---
+  {
+    id: '7-kahoot-5',
+    segmentTitle: 'POP CULTURE QUIZ',
+    slideTitle: 'Celebrity Gossip',
+    theme: 'pop',
+    type: 'grammar',
+    headline: 'TMZ ALERT',
+    visualAlt: 'Paparazzi Flash',
+    exerciseSet: {
+      title: 'Topic: Celebs (15 Questions)',
+      exercises: [
+        { pre: '"I am dating him." ➡ She confirmed she ', post: ' him.', answer: 'was dating', options: ['was dating', 'is dating', 'dated', 'dates'] },
+        { pre: '"We broke up." ➡ They announced they ', post: ' up.', answer: 'had broken', options: ['had broken', 'broke', 'have broken', 'break'] },
+        { pre: '"I haven\'t had plastic surgery." ➡ She insisted she ', post: ' plastic surgery.', answer: 'hadn\'t had', options: ['hadn\'t had', 'haven\'t had', 'didn\'t have', 'hasn\'t had'] },
+        { pre: '"I will release a memoir." ➡ Prince Harry said he ', post: ' release a memoir.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"Don\'t believe the rumors." ➡ He told fans ', post: ' the rumors.', answer: 'not to believe', options: ['not to believe', 'don\'t believe', 'no believe', 'to believe'] },
+        { pre: '"I can act." ➡ The model claimed she ', post: ' act.', answer: 'could', options: ['could', 'can', 'should', 'would'] },
+        { pre: '"She wore a meat dress." ➡ The article stated she ', post: ' a meat dress.', answer: 'had worn', options: ['had worn', 'wore', 'wears', 'has worn'] },
+        { pre: '"The paparazzi are annoying." ➡ He complained the paparazzi ', post: ' annoying.', answer: 'were', options: ['were', 'are', 'was', 'been'] },
+        { pre: '"I must attend the Met Gala." ➡ She said she ', post: ' attend.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        { pre: '"Are you pregnant?" ➡ The reporter asked if she ', post: ' pregnant.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"I have won an Oscar." ➡ The actor boasted he ', post: ' an Oscar.', answer: 'had won', options: ['had won', 'has won', 'won', 'wins'] },
+        { pre: '"We are just friends." ➡ They claimed they ', post: ' just friends.', answer: 'were', options: ['were', 'are', 'was', 'been'] },
+        { pre: '"He cheated on me." ➡ She revealed he ', post: ' on her.', answer: 'had cheated', options: ['had cheated', 'cheated', 'cheats', 'has cheated'] },
+        { pre: '"I will sue the magazine." ➡ He threatened he ', post: ' sue.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"They got married in secret." ➡ It was reported they ', post: ' in secret.', answer: 'had got', options: ['had got', 'got', 'get', 'getting'] },
+      ]
+    }
+  },
+
+  // --- KAHOOT 6: MUSIC ---
+  {
+    id: '7-kahoot-6',
+    segmentTitle: 'POP CULTURE QUIZ',
+    slideTitle: 'Music Industry',
+    theme: 'pop',
+    type: 'grammar',
+    headline: 'TOP CHARTS',
+    visualAlt: 'Headphones Neon',
+    exerciseSet: {
+      title: 'Topic: Music (15 Questions)',
+      exercises: [
+        { pre: '"I am dropping a single." ➡ The rapper said he ', post: ' a single.', answer: 'was dropping', options: ['was dropping', 'is dropping', 'dropped', 'drops'] },
+        { pre: '"The beat drops hard." ➡ Fans said the beat ', post: ' hard.', answer: 'dropped', options: ['dropped', 'drops', 'dropping', 'drop'] },
+        { pre: '"I wrote this for my ex." ➡ She explained she ', post: ' it for her ex.', answer: 'had written', options: ['had written', 'wrote', 'writes', 'has written'] },
+        { pre: '"You must listen to this." ➡ He told me I ', post: ' listen to that.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        { pre: '"I will go on tour." ➡ The band announced they ', post: ' go on tour.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"Ticketmaster crashed." ➡ Fans complained Ticketmaster ', post: ' crashed.', answer: 'had', options: ['had', 'has', 'have', 'did'] },
+        { pre: '"I have lost my voice." ➡ The singer said she ', post: ' her voice.', answer: 'had lost', options: ['had lost', 'has lost', 'lost', 'loses'] },
+        { pre: '"Don\'t stop the music." ➡ Rihanna said ', post: ' the music.', answer: 'not to stop', options: ['not to stop', 'don\'t stop', 'no stop', 'to stop'] },
+        { pre: '"This song is a bop." ➡ Everyone agreed the song ', post: ' a bop.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"Can you hear the bass?" ➡ He asked if I ', post: ' hear the bass.', answer: 'could', options: ['could', 'can', 'will', 'would'] },
+        { pre: '"We were jamming all night." ➡ They said they ', post: ' all night.', answer: 'had been jamming', options: ['had been jamming', 'were jamming', 'jammed', 'jam'] },
+        { pre: '"Taylor Swift re-recorded it." ➡ We knew Taylor ', post: ' it.', answer: 'had re-recorded', options: ['had re-recorded', 're-recorded', 'has re-recorded', 're-records'] },
+        { pre: '"I might collab with Drake." ➡ He hinted he ', post: ' collab with Drake.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
+        { pre: '"Did you buy the vinyl?" ➡ She asked if I ', post: ' the vinyl.', answer: 'had bought', options: ['had bought', 'bought', 'buy', 'buying'] },
+        { pre: '"I am streaming it now." ➡ He said he ', post: ' it then.', answer: 'was streaming', options: ['was streaming', 'is streaming', 'streamed', 'streams'] },
+      ]
+    }
+  },
+
+  // --- KAHOOT 7: HOGWARTS LEGACY ---
+  {
+    id: '7-kahoot-7',
+    segmentTitle: 'POP CULTURE QUIZ',
+    slideTitle: 'Wizarding World',
+    theme: 'pop',
+    type: 'grammar',
+    headline: 'MAGIC SCHOOL',
+    visualAlt: 'Wand Spark',
+    exerciseSet: {
+      title: 'Topic: Hogwarts Legacy (15 Questions)',
+      exercises: [
+        { pre: '"I am casting a spell." ➡ He said he ', post: ' a spell.', answer: 'was casting', options: ['was casting', 'is casting', 'cast', 'casts'] },
+        { pre: '"You must learn Revelio." ➡ The teacher said I ', post: ' learn Revelio.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        { pre: '"I found a shiny beast." ➡ She claimed she ', post: ' a shiny beast.', answer: 'had found', options: ['had found', 'found', 'has found', 'finds'] },
+        { pre: '"Don\'t go into the Forbidden Forest." ➡ Hagrid warned us ', post: ' into the forest.', answer: 'not to go', options: ['not to go', 'don\'t go', 'no go', 'to go'] },
+        { pre: '"I will choose Slytherin." ➡ He decided he ', post: ' choose Slytherin.', answer: 'would', options: ['would', 'will', 'can', 'could'] },
+        { pre: '"The goblin is lying." ➡ He suspected the goblin ', post: ' lying.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: '"I have finished the quest." ➡ She reported she ', post: ' the quest.', answer: 'had finished', options: ['had finished', 'finished', 'has finished', 'finishes'] },
+        { pre: '"Can you fly a broom?" ➡ He asked if I ', post: ' fly a broom.', answer: 'could', options: ['could', 'can', 'should', 'would'] },
+        { pre: '"Voldemort returned." ➡ They feared Voldemort ', post: ' returned.', answer: 'had', options: ['had', 'has', 'have', 'did'] },
+        { pre: '"We were brewing potions." ➡ They said they ', post: ' potions.', answer: 'had been brewing', options: ['had been brewing', 'were brewing', 'brewed', 'brew'] },
+        { pre: '"I might learn Avada Kedavra." ➡ The student whispered he ', post: ' learn it.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
+        { pre: '"Did you solve the puzzle?" ➡ She asked if I ', post: ' the puzzle.', answer: 'had solved', options: ['had solved', 'solved', 'solve', 'solving'] },
+        { pre: '"I cannot open this door." ➡ He complained he ', post: ' open the door.', answer: 'could not', options: ['could not', 'cannot', 'can not', 'will not'] },
+        { pre: '"The Sorting Hat decided." ➡ We knew the Hat ', post: ' decided.', answer: 'had', options: ['had', 'has', 'have', 'did'] },
+        { pre: '"I should upgrade my gear." ➡ He realized he ', post: ' upgrade his gear.', answer: 'should', options: ['should', 'would', 'could', 'must'] },
       ]
     }
   }
