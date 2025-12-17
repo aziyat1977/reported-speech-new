@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ConceptSlideData } from '../types';
 import { ArrowRight, Cpu, Radio, Zap } from 'lucide-react';
 
 interface ConceptSlideProps {
   data: ConceptSlideData;
+  onUnlock: () => void;
 }
 
-const ConceptSlide: React.FC<ConceptSlideProps> = ({ data }) => {
+const ConceptSlide: React.FC<ConceptSlideProps> = ({ data, onUnlock }) => {
+  // Concept slides are passive, so they unlock immediately upon viewing
+  useEffect(() => {
+    onUnlock();
+  }, [onUnlock]);
+
   const accentColor = 
     data.theme === 'green' ? 'text-cyber-green border-cyber-green' : 
     data.theme === 'gold' ? 'text-cyber-gold border-cyber-gold' : 

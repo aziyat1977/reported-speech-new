@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { GrammarSlideData, GrammarExercise } from '../types';
-import { Check, X, ArrowRight, Eye, RefreshCw, AlertCircle, Sparkles } from 'lucide-react';
+import { Check, X, ArrowRight, Eye, RefreshCw, AlertCircle, Sparkles, ShieldAlert, ShieldCheck } from 'lucide-react';
 
 interface GrammarSlideProps {
   data: GrammarSlideData;
+  onUnlock: () => void;
 }
 
-const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
+const GrammarSlide: React.FC<GrammarSlideProps> = ({ data, onUnlock }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isAnswerRevealed, setIsAnswerRevealed] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  
+  // Scoring State
+  const [mistakes, setMistakes] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
   
   // State for randomized content
   const [activeExercises, setActiveExercises] = useState<GrammarExercise[]>([]);
@@ -18,6 +23,10 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
 
   // 1. Initialize and shuffle questions when the slide ID changes
   useEffect(() => {
+    initExercises();
+  }, [data.id]);
+
+  const initExercises = () => {
     const questions = [...data.exerciseSet.exercises];
     // Fisher-Yates shuffle for questions
     for (let i = questions.length - 1; i > 0; i--) {
@@ -26,16 +35,18 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
     }
     setActiveExercises(questions);
     setCurrentIndex(0);
+    setMistakes(0);
+    setIsComplete(false);
     resetQuestionState();
-  }, [data.id]);
+  };
 
   // 2. Shuffle options whenever the current question changes or exercises are loaded
   useEffect(() => {
     resetQuestionState();
-    if (activeExercises.length > 0) {
+    if (activeExercises.length > 0 && !isComplete) {
       shuffleCurrentOptions();
     }
-  }, [currentIndex, activeExercises]);
+  }, [currentIndex, activeExercises, isComplete]);
 
   const resetQuestionState = () => {
     setSelectedOption(null);
@@ -57,11 +68,6 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   };
 
   const currentExercise = activeExercises[currentIndex];
-  
-  // Avoid rendering if not ready
-  if (!currentExercise) return null;
-
-  const isLastQuestion = currentIndex === activeExercises.length - 1;
 
   // Theme configuration
   const themeConfig = {
@@ -118,29 +124,113 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   const theme = themeConfig[data.theme];
 
   const handleOptionClick = (option: string) => {
-    if (isAnswerRevealed) return; // Prevent changing answer after reveal
+    if (isAnswerRevealed) return; 
     setSelectedOption(option);
     
     const correct = option === currentExercise.answer;
     setIsCorrect(correct);
     setIsAnswerRevealed(true);
+
+    if (!correct) {
+      setMistakes(prev => prev + 1);
+    }
   };
 
   const handleNext = () => {
     if (currentIndex < activeExercises.length - 1) {
       setCurrentIndex(prev => prev + 1);
+    } else {
+      finishSet();
+    }
+  };
+
+  const finishSet = () => {
+    setIsComplete(true);
+    // If accuracy is 100%, unlock the deck
+    if (mistakes === 0) {
+      onUnlock();
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(prev => prev - 1);
+      // NOTE: Going back in a quiz view typically shows the previous question state.
+      // But we are simplifying: once you move forward, you commit. 
+      // This simple implementation allows peeking back, but state is reset in useEffect. 
+      // To properly support "Prev", we would need to store the state of all questions.
+      // For this deck, we will disable "Prev" inside the quiz to enforce linear progression like a checkpoint.
     }
   };
 
   const handleReveal = () => {
-    setIsAnswerRevealed(true);
+    // Revealing without selecting counts as a mistake? Yes, for 100% mastery.
+    if (!isAnswerRevealed) {
+      setMistakes(prev => prev + 1);
+      setIsAnswerRevealed(true);
+      setIsCorrect(false); // Technically not correct if you needed a hint
+    }
   };
+
+  // --------------------------------------------------------------------------
+  // RENDER: COMPLETED STATE
+  // --------------------------------------------------------------------------
+  if (isComplete) {
+    const isSuccess = mistakes === 0;
+    const accuracy = Math.round(((activeExercises.length - mistakes) / activeExercises.length) * 100);
+
+    return (
+      <div className="flex flex-col h-full w-full items-center justify-center p-8 relative animate-in fade-in zoom-in duration-500">
+         <div className={`
+             max-w-2xl w-full border-2 ${isSuccess ? theme.border : 'border-red-500'} 
+             bg-black/80 backdrop-blur-xl p-8 md:p-12 rounded-xl shadow-2xl flex flex-col items-center text-center
+         `}>
+             {isSuccess ? (
+               <ShieldCheck size={80} className={`${theme.accent} mb-6 animate-pulse`} />
+             ) : (
+               <ShieldAlert size={80} className="text-red-500 mb-6 animate-pulse" />
+             )}
+
+             <h2 className={`text-3xl md:text-5xl font-bold font-mono uppercase mb-4 ${isSuccess ? 'text-white' : 'text-red-500'}`}>
+               {isSuccess ? 'CHECKPOINT REACHED' : 'PROTOCOL FAILED'}
+             </h2>
+
+             <div className="flex items-center gap-4 text-xl md:text-2xl font-mono mb-8">
+                <span className="text-gray-400">ACCURACY:</span>
+                <span className={`${isSuccess ? theme.accent : 'text-red-500'} font-bold`}>{accuracy}%</span>
+             </div>
+
+             <div className="text-gray-400 mb-10 max-w-lg leading-relaxed">
+               {isSuccess 
+                 ? "Neural link established. You have demonstrated 100% mastery of this protocol. Access to the next sector is granted."
+                 : "Neural link unstable. You must achieve 100% accuracy to proceed. Re-initialization required."
+               }
+             </div>
+
+             {isSuccess ? (
+               <div className={`px-8 py-3 rounded border ${theme.border} ${theme.bg} ${theme.accent} font-mono font-bold`}>
+                 ACCESS GRANTED // PRESS NEXT
+               </div>
+             ) : (
+               <button 
+                 onClick={initExercises}
+                 className="flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-500 text-white font-mono font-bold rounded shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all active:scale-95"
+               >
+                 <RefreshCw size={24} /> RE-INITIALIZE PROTOCOL
+               </button>
+             )}
+         </div>
+      </div>
+    );
+  }
+
+  // --------------------------------------------------------------------------
+  // RENDER: ACTIVE QUIZ
+  // --------------------------------------------------------------------------
+  
+  // Avoid rendering if not ready
+  if (!currentExercise) return null;
+  const isLastQuestion = currentIndex === activeExercises.length - 1;
 
   return (
     <div className="flex flex-col h-full w-full max-w-6xl mx-auto p-4 md:p-8 relative">
@@ -156,15 +246,22 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
                 {data.headline}
             </h2>
          </div>
-         <div className="flex items-center gap-4">
-             <div className="hidden md:flex gap-1">
-                 {activeExercises.map((_, idx) => (
-                     <div key={idx} className={`w-3 h-3 rounded-sm ${idx === currentIndex ? theme.accent.replace('text-', 'bg-') : idx < currentIndex ? 'bg-gray-600' : 'bg-gray-800'}`}></div>
-                 ))}
+         <div className="flex flex-col items-end">
+             <div className="flex items-center gap-4 mb-1">
+                 <div className="hidden md:flex gap-1">
+                     {activeExercises.map((_, idx) => (
+                         <div key={idx} className={`w-3 h-3 rounded-sm ${idx === currentIndex ? theme.accent.replace('text-', 'bg-') : idx < currentIndex ? 'bg-gray-600' : 'bg-gray-800'}`}></div>
+                     ))}
+                 </div>
+                 <span className={`font-mono text-xl font-bold ${theme.accent}`}>
+                     {currentIndex + 1}<span className="text-gray-600 text-sm mx-1">/</span>{activeExercises.length}
+                 </span>
              </div>
-             <span className={`font-mono text-xl font-bold ${theme.accent}`}>
-                 {currentIndex + 1}<span className="text-gray-600 text-sm mx-1">/</span>{activeExercises.length}
-             </span>
+             {mistakes > 0 && (
+                <span className="text-red-500 text-xs font-mono animate-pulse">
+                  ERRORS DETECTED: {mistakes}
+                </span>
+             )}
          </div>
       </div>
 
@@ -257,34 +354,27 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
 
       {/* Footer Controls */}
       <div className="mt-8 md:mt-12 flex justify-between items-center h-16 shrink-0 relative z-20">
-         <button 
-             onClick={handlePrev}
-             disabled={currentIndex === 0}
-             className={`px-6 py-3 rounded font-mono font-bold transition-all ${currentIndex === 0 ? 'opacity-0 pointer-events-none' : 'text-gray-500 hover:text-white'}`}
-         >
-             &lt; PREV
-         </button>
+         <div className="w-[100px]"></div> {/* Spacer - Prev disabled to force linear checkpoint flow */}
 
          {!isAnswerRevealed ? (
              <button 
                 onClick={handleReveal}
                 className={`flex items-center gap-2 px-8 py-3 rounded font-mono font-bold border-2 transition-all hover:bg-white/5 ${theme.accent} ${theme.border}`}
              >
-                 <Eye size={20} /> REVEAL ANSWER
+                 <Eye size={20} /> REVEAL (FORFEIT)
              </button>
          ) : (
              <button 
-                onClick={isLastQuestion ? () => {} : handleNext}
-                disabled={isLastQuestion}
+                onClick={handleNext}
                 className={`
                     flex items-center gap-2 px-10 py-4 rounded font-mono font-bold text-xl transition-all animate-bounce-subtle
                     ${isLastQuestion 
-                        ? 'bg-gray-800 text-gray-500 cursor-not-allowed' 
+                        ? theme.buttonPrimary
                         : theme.buttonPrimary
                     }
                 `}
              >
-                 {isLastQuestion ? 'SECTION COMPLETE' : 'NEXT QUESTION'} <ArrowRight size={24} />
+                 {isLastQuestion ? 'SUBMIT FOR ANALYSIS' : 'NEXT QUESTION'} <ArrowRight size={24} />
              </button>
          )}
          

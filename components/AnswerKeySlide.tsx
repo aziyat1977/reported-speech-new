@@ -4,10 +4,16 @@ import { Lock, Unlock } from 'lucide-react';
 
 interface AnswerKeySlideProps {
   data: AnswerKeySlideData;
+  onUnlock: () => void;
 }
 
-const AnswerKeySlide: React.FC<AnswerKeySlideProps> = ({ data }) => {
+const AnswerKeySlide: React.FC<AnswerKeySlideProps> = ({ data, onUnlock }) => {
   const [revealed, setRevealed] = useState(false);
+
+  const handleReveal = () => {
+    setRevealed(true);
+    onUnlock();
+  };
 
   const accentColor = 
     data.theme === 'green' ? 'text-cyber-green' : 
@@ -36,7 +42,7 @@ const AnswerKeySlide: React.FC<AnswerKeySlideProps> = ({ data }) => {
       >
         {!revealed && (
           <div 
-            onClick={() => setRevealed(true)}
+            onClick={handleReveal}
             className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm rounded-xl cursor-pointer hover:bg-black/70 transition-colors group"
           >
             <Lock className={`w-16 h-16 md:w-24 md:h-24 mb-6 ${accentColor} group-hover:scale-110 transition-transform`} />

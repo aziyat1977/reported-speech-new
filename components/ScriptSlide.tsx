@@ -4,9 +4,10 @@ import { Play, Pause, SkipForward, RotateCcw, Zap } from 'lucide-react';
 
 interface ScriptSlideProps {
   data: ScriptSlideData;
+  onUnlock: () => void;
 }
 
-const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
+const ScriptSlide: React.FC<ScriptSlideProps> = ({ data, onUnlock }) => {
   const [visibleIndex, setVisibleIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -37,6 +38,13 @@ const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
   };
 
   const theme = themeConfig[data.theme];
+
+  // Monitor completion to unlock
+  useEffect(() => {
+    if (visibleIndex >= data.scriptContent.length) {
+      onUnlock();
+    }
+  }, [visibleIndex, data.scriptContent.length, onUnlock]);
 
   // Auto-advance logic (Cinematic Playback)
   useEffect(() => {
@@ -78,6 +86,7 @@ const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
   const handleSkip = () => {
     setVisibleIndex(data.scriptContent.length);
     setIsPaused(true);
+    onUnlock(); // Immediate unlock if skipped
   };
 
   const handleRestart = () => {
