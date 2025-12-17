@@ -32,6 +32,7 @@ export interface GrammarExercise {
   pre: string;
   post: string;
   answer: string;
+  options: string[];
 }
 
 export interface GrammarSlideData extends BaseSlide {

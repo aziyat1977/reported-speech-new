@@ -61,10 +61,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 1: Present to Past',
       exercises: [
-        { pre: 'Barry explained that Bruce ', post: ' (sit) in his second favorite chair.', answer: 'was sitting' },
-        { pre: 'Barry claimed that the person in the photo ', post: ' (be) a very attractive Jewish boy.', answer: 'was' },
-        { pre: 'Bruce stated that he ', post: ' (know) Barry had abilities.', answer: 'knew' },
-        { pre: 'Barry insisted that he ', post: ' (do) competitive ice dancing.', answer: 'did' },
+        { pre: 'Barry explained that Bruce ', post: ' (sit) in his second favorite chair.', answer: 'was sitting', options: ['was sitting', 'is sitting', 'sat', 'has been sitting'] },
+        { pre: 'Barry claimed that the person in the photo ', post: ' (be) a very attractive Jewish boy.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: 'Bruce stated that he ', post: ' (know) Barry had abilities.', answer: 'knew', options: ['knew', 'knows', 'known', 'knowing'] },
+        { pre: 'Barry insisted that he ', post: ' (do) competitive ice dancing.', answer: 'did', options: ['did', 'do', 'does', 'done'] },
       ]
     }
   },
@@ -95,10 +95,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 2: Wh- Questions',
       exercises: [
-        { pre: 'Bruce asked Barry what his abilities ', post: '.', answer: 'were' },
-        { pre: 'Barry wondered why there ', post: ' a total stranger in his house.', answer: 'was' },
-        { pre: 'Barry asked Bruce what "brunch" ', post: '.', answer: 'was' },
-        { pre: 'Bruce inquired who ', post: ' (steal) the pocket watch.', answer: 'stole' },
+        { pre: 'Bruce asked Barry what his abilities ', post: '.', answer: 'were', options: ['were', 'are', 'was', 'been'] },
+        { pre: 'Barry wondered why there ', post: ' a total stranger in his house.', answer: 'was', options: ['was', 'is', 'were', 'are'] },
+        { pre: 'Barry asked Bruce what "brunch" ', post: '.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        { pre: 'Bruce inquired who ', post: ' (steal) the pocket watch.', answer: 'stole', options: ['stole', 'steals', 'stolen', 'steal'] },
       ]
     }
   },
@@ -129,10 +129,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 3: Yes/No & Modals',
       exercises: [
-        { pre: 'Barry asked Bruce ', post: ' he was the Batman.', answer: 'if' },
-        { pre: 'Bruce asked Barry ', post: ' he was fast.', answer: 'whether' },
-        { pre: 'Barry asked ', post: ' he could keep the Batarang.', answer: 'if' },
-        { pre: 'Bruce promised that he ', post: ' (will) try to keep up.', answer: 'would' },
+        { pre: 'Barry asked Bruce ', post: ' he was the Batman.', answer: 'if', options: ['if', 'that', 'did', 'what'] },
+        { pre: 'Bruce asked Barry ', post: ' he was fast.', answer: 'whether', options: ['whether', 'that', 'if not', 'did'] },
+        { pre: 'Barry asked ', post: ' he could keep the Batarang.', answer: 'if', options: ['if', 'unless', 'that', 'what'] },
+        { pre: 'Bruce promised that he ', post: ' (will) try to keep up.', answer: 'would', options: ['would', 'will', 'can', 'want'] },
       ]
     }
   },
@@ -163,10 +163,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 4: Commands (Infinitives)',
       exercises: [
-        { pre: 'Bruce ordered Barry ', post: ' (tell) him about the photo.', answer: 'to tell' },
-        { pre: 'Barry told Bruce ', post: ' (stop) right there.', answer: 'to stop' },
-        { pre: 'The director told the actors ', post: ' (get) into position.', answer: 'to get' },
-        { pre: 'Bruce essentially asked Barry ', post: ' (join) the team.', answer: 'to join' },
+        { pre: 'Bruce ordered Barry ', post: ' (tell) him about the photo.', answer: 'to tell', options: ['to tell', 'tell', 'telling', 'told'] },
+        { pre: 'Barry told Bruce ', post: ' (stop) right there.', answer: 'to stop', options: ['to stop', 'stop', 'stopping', 'stopped'] },
+        { pre: 'The director told the actors ', post: ' (get) into position.', answer: 'to get', options: ['to get', 'get', 'getting', 'got'] },
+        { pre: 'Bruce essentially asked Barry ', post: ' (join) the team.', answer: 'to join', options: ['to join', 'join', 'joining', 'joined'] },
       ]
     }
   },
@@ -197,10 +197,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 5: Explanations',
       exercises: [
-        { pre: 'Barry explained that the Speed Force ', post: ' (cause) him to burn calories.', answer: 'caused' },
-        { pre: 'He described himself as a "snack hole" because he ', post: ' (eat) so much.', answer: 'ate' },
-        { pre: 'Barry clarified that people ', post: ' (require) a lot of focus.', answer: 'required' },
-        { pre: 'He explained that brunch ', post: ' (be) just waiting in line.', answer: 'was' },
+        { pre: 'Barry explained that the Speed Force ', post: ' (cause) him to burn calories.', answer: 'caused', options: ['caused', 'causes', 'causing', 'cause'] },
+        { pre: 'He described himself as a "snack hole" because he ', post: ' (eat) so much.', answer: 'ate', options: ['ate', 'eats', 'eaten', 'eating'] },
+        { pre: 'Barry clarified that people ', post: ' (require) a lot of focus.', answer: 'required', options: ['required', 'requires', 'requiring', 'require'] },
+        { pre: 'He explained that brunch ', post: ' (be) just waiting in line.', answer: 'was', options: ['was', 'is', 'were', 'be'] },
       ]
     }
   },
@@ -231,12 +231,12 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 6 & 7: Thoughts & Agreements',
       exercises: [
-        { pre: 'When Bruce asked if he was in, Barry immediately ', post: ' (agree) to join.', answer: 'agreed' },
-        { pre: 'Bruce never explicitly ', post: ' (confirm) it with words.', answer: 'confirmed' },
-        { pre: 'Barry ', post: ' (admit) that he needed friends.', answer: 'admitted' },
-        { pre: 'Bruce ', post: ' (accept) the challenge.', answer: 'accepted' },
-        { pre: 'Barry suddenly ', post: ' (realize) who Bruce was.', answer: 'realized' },
-        { pre: 'Bruce ', post: ' (believe) that enemies were coming.', answer: 'believed' },
+        { pre: 'When Bruce asked if he was in, Barry immediately ', post: ' (agree) to join.', answer: 'agreed', options: ['agreed', 'agrees', 'agreeing', 'agree'] },
+        { pre: 'Bruce never explicitly ', post: ' (confirm) it with words.', answer: 'confirmed', options: ['confirmed', 'confirms', 'confirming', 'confirm'] },
+        { pre: 'Barry ', post: ' (admit) that he needed friends.', answer: 'admitted', options: ['admitted', 'admits', 'admitting', 'admit'] },
+        { pre: 'Bruce ', post: ' (accept) the challenge.', answer: 'accepted', options: ['accepted', 'accepts', 'accepting', 'accept'] },
+        { pre: 'Barry suddenly ', post: ' (realize) who Bruce was.', answer: 'realized', options: ['realized', 'realizes', 'realizing', 'realize'] },
+        { pre: 'Bruce ', post: ' (believe) that enemies were coming.', answer: 'believed', options: ['believed', 'believes', 'believing', 'believe'] },
       ]
     }
   },
@@ -314,10 +314,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 1: Complaints',
       exercises: [
-        { pre: 'The worker muttered that it ', post: ' (be) Nathan Drake again.', answer: 'was' },
-        { pre: 'Nathan explained that treasure hunting ', post: ' (be) a dirty business.', answer: 'was' },
-        { pre: 'Nathan complained that the claw machine ', post: ' (be) broken.', answer: 'was' },
-        { pre: 'The clerk insisted that the machine ', post: ' (be / negative) broken.', answer: 'wasn\'t' },
+        { pre: 'The worker muttered that it ', post: ' (be) Nathan Drake again.', answer: 'was', options: ['was', 'is', 'are', 'been'] },
+        { pre: 'Nathan explained that treasure hunting ', post: ' (be) a dirty business.', answer: 'was', options: ['was', 'is', 'are', 'were'] },
+        { pre: 'Nathan complained that the claw machine ', post: ' (be) broken.', answer: 'was', options: ['was', 'is', 'are', 'been'] },
+        { pre: 'The clerk insisted that the machine ', post: ' (be / negative) broken.', answer: 'wasn\'t', options: ['wasn\'t', 'isn\'t', 'aren\'t', 'weren\'t'] },
       ]
     }
   },
@@ -348,10 +348,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 2: Short Answers',
       exercises: [
-        { pre: 'When Nathan said it was a dirty business, the worker ', post: ' that it was.', answer: 'agreed' },
-        { pre: 'When Nathan claimed the machine was broken, the clerk ', post: ' it.', answer: 'denied' },
-        { pre: 'The worker announced that the car ', post: ' (be) ready.', answer: 'was' },
-        { pre: 'Nathan thanked them and ', post: ' (give) them a gold bar.', answer: 'gave' },
+        { pre: 'When Nathan said it was a dirty business, the worker ', post: ' that it was.', answer: 'agreed', options: ['agreed', 'agrees', 'agreeing', 'agree'] },
+        { pre: 'When Nathan claimed the machine was broken, the clerk ', post: ' it.', answer: 'denied', options: ['denied', 'denies', 'denying', 'deny'] },
+        { pre: 'The worker announced that the car ', post: ' (be) ready.', answer: 'was', options: ['was', 'is', 'are', 'been'] },
+        { pre: 'Nathan thanked them and ', post: ' (give) them a gold bar.', answer: 'gave', options: ['gave', 'gives', 'given', 'giving'] },
       ]
     }
   },
@@ -382,10 +382,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 3: "Real" Facts',
       exercises: [
-        { pre: 'The clerk explained that that ', post: ' (be) how the machine worked.', answer: 'was' },
-        { pre: 'Nathan realized that treasure hunting ', post: ' (make) the car very dirty.', answer: 'made' },
-        { pre: 'The commercial showed that the car ', post: ' (look) brand new.', answer: 'looked' },
-        { pre: 'The spider probably thought the car ', post: ' (be) a nice place.', answer: 'was' },
+        { pre: 'The clerk explained that that ', post: ' (be) how the machine worked.', answer: 'was', options: ['was', 'is', 'are', 'been'] },
+        { pre: 'Nathan realized that treasure hunting ', post: ' (make) the car very dirty.', answer: 'made', options: ['made', 'makes', 'making', 'make'] },
+        { pre: 'The commercial showed that the car ', post: ' (look) brand new.', answer: 'looked', options: ['looked', 'looks', 'looking', 'look'] },
+        { pre: 'The spider probably thought the car ', post: ' (be) a nice place.', answer: 'was', options: ['was', 'is', 'are', 'been'] },
       ]
     }
   },
@@ -416,10 +416,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 4: Implicit Commands',
       exercises: [
-        { pre: 'The worker called out to ', post: ' (remind) Mr. Drake.', answer: 'remind' },
-        { pre: 'The sign on the wall warned customers ', post: ' (stop) their engines.', answer: 'to stop' },
-        { pre: 'Nathan likely wanted the workers ', post: ' (clean) the mud off.', answer: 'to clean' },
-        { pre: 'The clerk told Nathan ', post: ' (leave) the machine alone.', answer: 'to leave' },
+        { pre: 'The worker called out to ', post: ' (remind) Mr. Drake.', answer: 'remind', options: ['remind', 'reminds', 'reminding', 'reminded'] },
+        { pre: 'The sign on the wall warned customers ', post: ' (stop) their engines.', answer: 'to stop', options: ['to stop', 'stop', 'stopping', 'stopped'] },
+        { pre: 'Nathan likely wanted the workers ', post: ' (clean) the mud off.', answer: 'to clean', options: ['to clean', 'clean', 'cleaning', 'cleaned'] },
+        { pre: 'The clerk told Nathan ', post: ' (leave) the machine alone.', answer: 'to leave', options: ['to leave', 'leave', 'leaving', 'left'] },
       ]
     }
   },
@@ -450,10 +450,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 5: Contradictions',
       exercises: [
-        { pre: 'Nathan claimed it was broken, but the clerk ', post: ' (insist) that it wasn\'t.', answer: 'insisted' },
-        { pre: 'The clerk argued that that ', post: ' (be) simply how it worked.', answer: 'was' },
-        { pre: 'Nathan ', post: ' (deny) that the machine was working.', answer: 'denied' },
-        { pre: 'They ', post: ' (argue) about whether it was functional.', answer: 'argued' },
+        { pre: 'Nathan claimed it was broken, but the clerk ', post: ' (insist) that it wasn\'t.', answer: 'insisted', options: ['insisted', 'insists', 'insisting', 'insist'] },
+        { pre: 'The clerk argued that that ', post: ' (be) simply how it worked.', answer: 'was', options: ['was', 'is', 'are', 'been'] },
+        { pre: 'Nathan ', post: ' (deny) that the machine was working.', answer: 'denied', options: ['denied', 'denies', 'denying', 'deny'] },
+        { pre: 'They ', post: ' (argue) about whether it was functional.', answer: 'argued', options: ['argued', 'argues', 'arguing', 'argue'] },
       ]
     }
   },
@@ -484,10 +484,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 6 & 7: Observations',
       exercises: [
-        { pre: 'The worker ', post: ' (notice) that Nathan was back.', answer: 'noticed' },
-        { pre: 'Nathan ', post: ' (see) a spider crawling.', answer: 'saw' },
-        { pre: 'The staff ', post: ' (observe) that the car was muddy.', answer: 'observed' },
-        { pre: 'Nathan ', post: ' (find) that the machine was frustrating.', answer: 'found' },
+        { pre: 'The worker ', post: ' (notice) that Nathan was back.', answer: 'noticed', options: ['noticed', 'notices', 'noticing', 'notice'] },
+        { pre: 'Nathan ', post: ' (see) a spider crawling.', answer: 'saw', options: ['saw', 'sees', 'seen', 'seeing'] },
+        { pre: 'The staff ', post: ' (observe) that the car was muddy.', answer: 'observed', options: ['observed', 'observes', 'observing', 'observe'] },
+        { pre: 'Nathan ', post: ' (find) that the machine was frustrating.', answer: 'found', options: ['found', 'finds', 'finding', 'find'] },
       ]
     }
   },
@@ -573,10 +573,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 1: Positive & Negative Commands',
       exercises: [
-        { pre: 'The instructor told Peter ', post: ' (put) his hands at 9 and 3.', answer: 'to put' },
-        { pre: 'He warned Peter ', post: ' (not / be) a hero.', answer: 'not to be' },
-        { pre: 'He shouted at Peter ', post: ' (slow) down.', answer: 'to slow' },
-        { pre: 'He yelled at him ', post: ' (not / do) that.', answer: 'not to do' },
+        { pre: 'The instructor told Peter ', post: ' (put) his hands at 9 and 3.', answer: 'to put', options: ['to put', 'put', 'putting', 'puts'] },
+        { pre: 'He warned Peter ', post: ' (not / be) a hero.', answer: 'not to be', options: ['not to be', 'not be', 'to not be', 'don\'t be'] },
+        { pre: 'He shouted at Peter ', post: ' (slow) down.', answer: 'to slow', options: ['to slow', 'slow', 'slowing', 'slowed'] },
+        { pre: 'He yelled at him ', post: ' (not / do) that.', answer: 'not to do', options: ['not to do', 'not do', 'don\'t do', 'no do'] },
       ]
     }
   },
@@ -607,10 +607,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 2: Uncertainty',
       exercises: [
-        { pre: 'Peter replied that he ', post: ' (think) the rule was 10 and 2.', answer: 'thought' },
-        { pre: 'The instructor asked if there ', post: ' (be) a Parker Peter.', answer: 'was' },
-        { pre: 'Peter asked if he ', post: ' (lose) five points.', answer: 'lost' },
-        { pre: 'Peter asked what he ', post: ' (say) about heroes.', answer: 'had said' },
+        { pre: 'Peter replied that he ', post: ' (think) the rule was 10 and 2.', answer: 'thought', options: ['thought', 'thinks', 'thinking', 'think'] },
+        { pre: 'The instructor asked if there ', post: ' (be) a Parker Peter.', answer: 'was', options: ['was', 'is', 'are', 'been'] },
+        { pre: 'Peter asked if he ', post: ' (lose) five points.', answer: 'lost', options: ['lost', 'loses', 'losing', 'lose'] },
+        { pre: 'Peter asked what he ', post: ' (say) about heroes.', answer: 'had said', options: ['had said', 'has said', 'said', 'says'] },
       ]
     }
   },
@@ -641,10 +641,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 3: Future in the Past',
       exercises: [
-        { pre: 'The instructor stated that Peter ', post: ' (be going to) lose points.', answer: 'was going to' },
-        { pre: 'He warned that it ', post: ' (be going to) be close.', answer: 'was going to' },
-        { pre: 'The instructor wished that he ', post: ' (have) a friend named Tony.', answer: 'had' },
-        { pre: 'Peter probably hoped he ', post: ' (will / pass) the test.', answer: 'would pass' },
+        { pre: 'The instructor stated that Peter ', post: ' (be going to) lose points.', answer: 'was going to', options: ['was going to', 'is going to', 'goes to', 'went to'] },
+        { pre: 'He warned that it ', post: ' (be going to) be close.', answer: 'was going to', options: ['was going to', 'is going to', 'will', 'would'] },
+        { pre: 'The instructor wished that he ', post: ' (have) a friend named Tony.', answer: 'had', options: ['had', 'has', 'have', 'having'] },
+        { pre: 'Peter probably hoped he ', post: ' (will / pass) the test.', answer: 'would pass', options: ['would pass', 'will pass', 'passed', 'passes'] },
       ]
     }
   },
@@ -675,10 +675,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 4: Mixed Reporting',
       exercises: [
-        { pre: 'Peter mentioned that the car ', post: ' (belong) to Tony.', answer: 'belonged' },
-        { pre: 'The instructor mumbled that he ', post: ' (notice) everything.', answer: 'noticed' },
-        { pre: 'After the fight, Peter asked if he ', post: ' (pass).', answer: 'passed' },
-        { pre: 'The instructor simply told him ', post: ' (go).', answer: 'to go' },
+        { pre: 'Peter mentioned that the car ', post: ' (belong) to Tony.', answer: 'belonged', options: ['belonged', 'belongs', 'belonging', 'belong'] },
+        { pre: 'The instructor mumbled that he ', post: ' (notice) everything.', answer: 'noticed', options: ['noticed', 'notices', 'noticing', 'notice'] },
+        { pre: 'After the fight, Peter asked if he ', post: ' (pass).', answer: 'passed', options: ['passed', 'pass', 'passes', 'passing'] },
+        { pre: 'The instructor simply told him ', post: ' (go).', answer: 'to go', options: ['to go', 'go', 'going', 'gone'] },
       ]
     }
   },
@@ -709,10 +709,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 5: Threats & Warnings',
       exercises: [
-        { pre: 'The instructor ', post: ' (threaten) to fail Peter.', answer: 'threatened' },
-        { pre: 'He ', post: ' (warn) Peter about eyeballing.', answer: 'warned' },
-        { pre: 'He ', post: ' (remind) Peter about the rules.', answer: 'reminded' },
-        { pre: 'He ', post: ' (caution) Peter not to be a hero.', answer: 'cautioned' },
+        { pre: 'The instructor ', post: ' (threaten) to fail Peter.', answer: 'threatened', options: ['threatened', 'threatens', 'threatening', 'threaten'] },
+        { pre: 'He ', post: ' (warn) Peter about eyeballing.', answer: 'warned', options: ['warned', 'warns', 'warning', 'warn'] },
+        { pre: 'He ', post: ' (remind) Peter about the rules.', answer: 'reminded', options: ['reminded', 'reminds', 'reminding', 'remind'] },
+        { pre: 'He ', post: ' (caution) Peter not to be a hero.', answer: 'cautioned', options: ['cautioned', 'cautions', 'cautioning', 'caution'] },
       ]
     }
   },
@@ -743,10 +743,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Ex 6 & 7: Apologies & Exclamations',
       exercises: [
-        { pre: 'Peter ', post: ' (apologize) for the hands.', answer: 'apologized' },
-        { pre: 'Peter said "Sorry" because he ', post: ' (make) a mistake.', answer: 'had made' },
-        { pre: 'The instructor didn\'t ', post: ' (apologize).', answer: 'apologize' },
-        { pre: 'Peter felt bad and ', post: ' (say) sorry.', answer: 'said' },
+        { pre: 'Peter ', post: ' (apologize) for the hands.', answer: 'apologized', options: ['apologized', 'apologizes', 'apologizing', 'apologize'] },
+        { pre: 'Peter said "Sorry" because he ', post: ' (make) a mistake.', answer: 'had made', options: ['had made', 'has made', 'made', 'makes'] },
+        { pre: 'The instructor didn\'t ', post: ' (apologize).', answer: 'apologize', options: ['apologize', 'apologized', 'apologizes', 'apologizing'] },
+        { pre: 'Peter felt bad and ', post: ' (say) sorry.', answer: 'said', options: ['said', 'says', 'saying', 'say'] },
       ]
     }
   },
@@ -798,10 +798,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 01: Present Simple',
       exercises: [
-        { pre: 'The Netrunner said, "I write code daily." ➡ He said he ', post: ' code daily.', answer: 'wrote' },
-        { pre: 'She said, "The server crashes often." ➡ She said the server ', post: ' often.', answer: 'crashed' },
-        { pre: 'He said, "I know the password." ➡ He said he ', post: ' the password.', answer: 'knew' },
-        { pre: 'They said, "We work in the shadows." ➡ They said they ', post: ' in the shadows.', answer: 'worked' },
+        { pre: 'The Netrunner said, "I write code daily." ➡ He said he ', post: ' code daily.', answer: 'wrote', options: ['wrote', 'write', 'writes', 'written'] },
+        { pre: 'She said, "The server crashes often." ➡ She said the server ', post: ' often.', answer: 'crashed', options: ['crashed', 'crashes', 'crashing', 'crash'] },
+        { pre: 'He said, "I know the password." ➡ He said he ', post: ' the password.', answer: 'knew', options: ['knew', 'knows', 'known', 'knowing'] },
+        { pre: 'They said, "We work in the shadows." ➡ They said they ', post: ' in the shadows.', answer: 'worked', options: ['worked', 'work', 'works', 'working'] },
       ]
     }
   },
@@ -832,10 +832,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 02: Present Continuous',
       exercises: [
-        { pre: '"I am downloading the file." ➡ He said he ', post: ' (download) it.', answer: 'was downloading' },
-        { pre: '"We are tracking the signal." ➡ They said they ', post: ' (track) it.', answer: 'were tracking' },
-        { pre: '"She is decrypting the key." ➡ He said she ', post: ' (decrypt) it.', answer: 'was decrypting' },
-        { pre: '"I am not listening." ➡ He said he ', post: ' (listen / neg).', answer: 'wasn\'t listening' },
+        { pre: '"I am downloading the file." ➡ He said he ', post: ' (download) it.', answer: 'was downloading', options: ['was downloading', 'is downloading', 'downloaded', 'downloads'] },
+        { pre: '"We are tracking the signal." ➡ They said they ', post: ' (track) it.', answer: 'were tracking', options: ['were tracking', 'are tracking', 'tracked', 'track'] },
+        { pre: '"She is decrypting the key." ➡ He said she ', post: ' (decrypt) it.', answer: 'was decrypting', options: ['was decrypting', 'is decrypting', 'decrypted', 'decrypts'] },
+        { pre: '"I am not listening." ➡ He said he ', post: ' (listen / neg).', answer: 'wasn\'t listening', options: ['wasn\'t listening', 'isn\'t listening', 'didn\'t listen', 'not listening'] },
       ]
     }
   },
@@ -866,10 +866,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 03: Present Perfect',
       exercises: [
-        { pre: '"I have finished the scan." ➡ He said he ', post: ' (finish) the scan.', answer: 'had finished' },
-        { pre: '"We have breached the gate." ➡ They said they ', post: ' (breach) the gate.', answer: 'had breached' },
-        { pre: '"She has lost the data." ➡ He said she ', post: ' (lose) the data.', answer: 'had lost' },
-        { pre: '"I have never seen this code." ➡ He said he ', post: ' (see / never) that code.', answer: 'had never seen' },
+        { pre: '"I have finished the scan." ➡ He said he ', post: ' (finish) the scan.', answer: 'had finished', options: ['had finished', 'has finished', 'finished', 'finishes'] },
+        { pre: '"We have breached the gate." ➡ They said they ', post: ' (breach) the gate.', answer: 'had breached', options: ['had breached', 'has breached', 'breached', 'breaches'] },
+        { pre: '"She has lost the data." ➡ He said she ', post: ' (lose) the data.', answer: 'had lost', options: ['had lost', 'has lost', 'lost', 'loses'] },
+        { pre: '"I have never seen this code." ➡ He said he ', post: ' (see / never) that code.', answer: 'had never seen', options: ['had never seen', 'has never seen', 'never saw', 'never seen'] },
       ]
     }
   },
@@ -900,10 +900,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 04: Past Simple',
       exercises: [
-        { pre: '"I stole the chip." ➡ He admitted he ', post: ' (steal) the chip.', answer: 'had stolen' },
-        { pre: '"We found the glitch." ➡ They said they ', post: ' (find) the glitch.', answer: 'had found' },
-        { pre: '"The system crashed." ➡ He reported that the system ', post: ' (crash).', answer: 'had crashed' },
-        { pre: '"I didn\'t do it." ➡ He claimed he ', post: ' (do / neg) it.', answer: 'hadn\'t done' },
+        { pre: '"I stole the chip." ➡ He admitted he ', post: ' (steal) the chip.', answer: 'had stolen', options: ['had stolen', 'stole', 'has stolen', 'steals'] },
+        { pre: '"We found the glitch." ➡ They said they ', post: ' (find) the glitch.', answer: 'had found', options: ['had found', 'found', 'has found', 'finds'] },
+        { pre: '"The system crashed." ➡ He reported that the system ', post: ' (crash).', answer: 'had crashed', options: ['had crashed', 'crashed', 'has crashed', 'crashes'] },
+        { pre: '"I didn\'t do it." ➡ He claimed he ', post: ' (do / neg) it.', answer: 'hadn\'t done', options: ['hadn\'t done', 'didn\'t do', 'hasn\'t done', 'not done'] },
       ]
     }
   },
@@ -934,10 +934,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 05: Past Continuous',
       exercises: [
-        { pre: '"I was running a diagnostic." ➡ He said he ', post: ' (run) a diagnostic.', answer: 'had been running' },
-        { pre: '"We were waiting for the signal." ➡ They said they ', post: ' (wait).', answer: 'had been waiting' },
-        { pre: '"She was coding all night." ➡ He said she ', post: ' (code) all night.', answer: 'had been coding' },
-        { pre: '"It was raining in the simulation." ➡ He said it ', post: ' (rain).', answer: 'had been raining' },
+        { pre: '"I was running a diagnostic." ➡ He said he ', post: ' (run) a diagnostic.', answer: 'had been running', options: ['had been running', 'was running', 'ran', 'has run'] },
+        { pre: '"We were waiting for the signal." ➡ They said they ', post: ' (wait).', answer: 'had been waiting', options: ['had been waiting', 'were waiting', 'waited', 'wait'] },
+        { pre: '"She was coding all night." ➡ He said she ', post: ' (code) all night.', answer: 'had been coding', options: ['had been coding', 'was coding', 'coded', 'codes'] },
+        { pre: '"It was raining in the simulation." ➡ He said it ', post: ' (rain).', answer: 'had been raining', options: ['had been raining', 'was raining', 'rained', 'rains'] },
       ]
     }
   },
@@ -968,10 +968,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 06: Past Perfect',
       exercises: [
-        { pre: '"I had seen the error before." ➡ He said he ', post: ' (see) it before.', answer: 'had seen' },
-        { pre: '"She had left the network." ➡ He said she ', post: ' (leave) the network.', answer: 'had left' },
-        { pre: '"We had prepared the trap." ➡ They said they ', post: ' (prepare) the trap.', answer: 'had prepared' },
-        { pre: '"The bot had failed twice." ➡ He noted the bot ', post: ' (fail) twice.', answer: 'had failed' },
+        { pre: '"I had seen the error before." ➡ He said he ', post: ' (see) it before.', answer: 'had seen', options: ['had seen', 'saw', 'seen', 'see'] },
+        { pre: '"She had left the network." ➡ He said she ', post: ' (leave) the network.', answer: 'had left', options: ['had left', 'left', 'leave', 'leaves'] },
+        { pre: '"We had prepared the trap." ➡ They said they ', post: ' (prepare) the trap.', answer: 'had prepared', options: ['had prepared', 'prepared', 'prepare', 'prepares'] },
+        { pre: '"The bot had failed twice." ➡ He noted the bot ', post: ' (fail) twice.', answer: 'had failed', options: ['had failed', 'failed', 'fails', 'failing'] },
       ]
     }
   },
@@ -1002,10 +1002,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 07: Future Simple',
       exercises: [
-        { pre: '"I will hack the mainframe." ➡ He said he ', post: ' (hack) it.', answer: 'would hack' },
-        { pre: '"They will never find us." ➡ She said they ', post: ' (find / never) them.', answer: 'would never find' },
-        { pre: '"It will be dangerous." ➡ He warned it ', post: ' (be) dangerous.', answer: 'would be' },
-        { pre: '"I won\'t fail." ➡ He promised he ', post: ' (fail / neg).', answer: 'wouldn\'t fail' },
+        { pre: '"I will hack the mainframe." ➡ He said he ', post: ' (hack) it.', answer: 'would hack', options: ['would hack', 'will hack', 'hacked', 'hack'] },
+        { pre: '"They will never find us." ➡ She said they ', post: ' (find / never) them.', answer: 'would never find', options: ['would never find', 'will never find', 'never found', 'never finds'] },
+        { pre: '"It will be dangerous." ➡ He warned it ', post: ' (be) dangerous.', answer: 'would be', options: ['would be', 'will be', 'is', 'was'] },
+        { pre: '"I won\'t fail." ➡ He promised he ', post: ' (fail / neg).', answer: 'wouldn\'t fail', options: ['wouldn\'t fail', 'won\'t fail', 'didn\'t fail', 'not fail'] },
       ]
     }
   },
@@ -1036,10 +1036,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 08: Future Continuous',
       exercises: [
-        { pre: '"I will be monitoring the feed." ➡ He said he ', post: ' (monitor) it.', answer: 'would be monitoring' },
-        { pre: '"We will be moving fast." ➡ They said they ', post: ' (move) fast.', answer: 'would be moving' },
-        { pre: '"She will be expecting us." ➡ He said she ', post: ' (expect) them.', answer: 'would be expecting' },
-        { pre: '"The system will be updating." ➡ It said the system ', post: ' (update).', answer: 'would be updating' },
+        { pre: '"I will be monitoring the feed." ➡ He said he ', post: ' (monitor) it.', answer: 'would be monitoring', options: ['would be monitoring', 'will be monitoring', 'monitored', 'monitor'] },
+        { pre: '"We will be moving fast." ➡ They said they ', post: ' (move) fast.', answer: 'would be moving', options: ['would be moving', 'will be moving', 'moved', 'move'] },
+        { pre: '"She will be expecting us." ➡ He said she ', post: ' (expect) them.', answer: 'would be expecting', options: ['would be expecting', 'will be expecting', 'expected', 'expect'] },
+        { pre: '"The system will be updating." ➡ It said the system ', post: ' (update).', answer: 'would be updating', options: ['would be updating', 'will be updating', 'updated', 'update'] },
       ]
     }
   },
@@ -1070,10 +1070,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 09: Future Perfect',
       exercises: [
-        { pre: '"I will have finished by noon." ➡ He said he ', post: ' (finish) by noon.', answer: 'would have finished' },
-        { pre: '"We will have destroyed the evidence." ➡ They said they ', post: ' (destroy) it.', answer: 'would have destroyed' },
-        { pre: '"The virus will have spread." ➡ He noted the virus ', post: ' (spread).', answer: 'would have spread' },
-        { pre: '"I will have left the city." ➡ He said he ', post: ' (leave) the city.', answer: 'would have left' },
+        { pre: '"I will have finished by noon." ➡ He said he ', post: ' (finish) by noon.', answer: 'would have finished', options: ['would have finished', 'will have finished', 'finished', 'finishes'] },
+        { pre: '"We will have destroyed the evidence." ➡ They said they ', post: ' (destroy) it.', answer: 'would have destroyed', options: ['would have destroyed', 'will have destroyed', 'destroyed', 'destroys'] },
+        { pre: '"The virus will have spread." ➡ He noted the virus ', post: ' (spread).', answer: 'would have spread', options: ['would have spread', 'will have spread', 'spread', 'spreads'] },
+        { pre: '"I will have left the city." ➡ He said he ', post: ' (leave) the city.', answer: 'would have left', options: ['would have left', 'will have left', 'left', 'leaves'] },
       ]
     }
   },
@@ -1108,10 +1108,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 01: Can',
       exercises: [
-        { pre: '"I can bypass the lock." ➡ He said he ', post: ' (can) bypass it.', answer: 'could' },
-        { pre: '"You can\'t stop us." ➡ She said we ', post: ' (can / neg) stop them.', answer: 'couldn\'t' },
-        { pre: '"Can you help me?" ➡ He asked if I ', post: ' (can) help him.', answer: 'could' },
-        { pre: '"It can happen anytime." ➡ He warned it ', post: ' (can) happen anytime.', answer: 'could' },
+        { pre: '"I can bypass the lock." ➡ He said he ', post: ' (can) bypass it.', answer: 'could', options: ['could', 'can', 'able', 'canned'] },
+        { pre: '"You can\'t stop us." ➡ She said we ', post: ' (can / neg) stop them.', answer: 'couldn\'t', options: ['couldn\'t', 'can\'t', 'cannot', 'not'] },
+        { pre: '"Can you help me?" ➡ He asked if I ', post: ' (can) help him.', answer: 'could', options: ['could', 'can', 'should', 'would'] },
+        { pre: '"It can happen anytime." ➡ He warned it ', post: ' (can) happen anytime.', answer: 'could', options: ['could', 'can', 'will', 'may'] },
       ]
     }
   },
@@ -1142,10 +1142,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 02: May',
       exercises: [
-        { pre: '"We may be late." ➡ They said they ', post: ' (may) be late.', answer: 'might' },
-        { pre: '"The file may contain malware." ➡ He warned the file ', post: ' (may) contain malware.', answer: 'might' },
-        { pre: '"I may not return." ➡ He said he ', post: ' (may / neg) return.', answer: 'might not' },
-        { pre: '"May I enter?" ➡ He asked if he ', post: ' (may) enter.', answer: 'might' },
+        { pre: '"We may be late." ➡ They said they ', post: ' (may) be late.', answer: 'might', options: ['might', 'may', 'must', 'will'] },
+        { pre: '"The file may contain malware." ➡ He warned the file ', post: ' (may) contain malware.', answer: 'might', options: ['might', 'may', 'can', 'should'] },
+        { pre: '"I may not return." ➡ He said he ', post: ' (may / neg) return.', answer: 'might not', options: ['might not', 'may not', 'cannot', 'won\'t'] },
+        { pre: '"May I enter?" ➡ He asked if he ', post: ' (may) enter.', answer: 'might', options: ['might', 'will', 'can', 'may'] },
       ]
     }
   },
@@ -1176,10 +1176,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 03: Must',
       exercises: [
-        { pre: '"I must finish this." ➡ He said he ', post: ' (must) finish it.', answer: 'had to' },
-        { pre: '"You must be careful." ➡ She told me I ', post: ' (must) be careful.', answer: 'had to' },
-        { pre: '"We must delete the logs." ➡ They realized they ', post: ' (must) delete them.', answer: 'had to' },
-        { pre: '"I must not fail." ➡ He knew he ', post: ' (must / neg) fail.', answer: 'must not' }, 
+        { pre: '"I must finish this." ➡ He said he ', post: ' (must) finish it.', answer: 'had to', options: ['had to', 'must', 'have to', 'has to'] },
+        { pre: '"You must be careful." ➡ She told me I ', post: ' (must) be careful.', answer: 'had to', options: ['had to', 'must', 'should', 'could'] },
+        { pre: '"We must delete the logs." ➡ They realized they ', post: ' (must) delete them.', answer: 'had to', options: ['had to', 'must', 'have to', 'need'] },
+        { pre: '"I must not fail." ➡ He knew he ', post: ' (must / neg) fail.', answer: 'must not', options: ['must not', 'had not', 'didn\'t', 'don\'t'] }, 
       ]
     }
   },
@@ -1210,10 +1210,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 04: Should',
       exercises: [
-        { pre: '"We should encrypt the data." ➡ They agreed they ', post: ' (should) encrypt it.', answer: 'should' },
-        { pre: '"You shouldn\'t touch that." ➡ He said I ', post: ' (should / neg) touch it.', answer: 'shouldn\'t' },
-        { pre: '"Should we call for backup?" ➡ He asked if they ', post: ' (should) call.', answer: 'should' },
-        { pre: '"I should have known." ➡ He admitted he ', post: ' (should) have known.', answer: 'should' },
+        { pre: '"We should encrypt the data." ➡ They agreed they ', post: ' (should) encrypt it.', answer: 'should', options: ['should', 'shall', 'would', 'will'] },
+        { pre: '"You shouldn\'t touch that." ➡ He said I ', post: ' (should / neg) touch it.', answer: 'shouldn\'t', options: ['shouldn\'t', 'shan\'t', 'wouldn\'t', 'won\'t'] },
+        { pre: '"Should we call for backup?" ➡ He asked if they ', post: ' (should) call.', answer: 'should', options: ['should', 'would', 'could', 'can'] },
+        { pre: '"I should have known." ➡ He admitted he ', post: ' (should) have known.', answer: 'should', options: ['should', 'would', 'will', 'can'] },
       ]
     }
   },
@@ -1244,10 +1244,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 05: Might',
       exercises: [
-        { pre: '"It might be a trap." ➡ He feared it ', post: ' (might) be a trap.', answer: 'might' },
-        { pre: '"I might join you." ➡ He said he ', post: ' (might) join us.', answer: 'might' },
-        { pre: '"They might not understand." ➡ She thought they ', post: ' (might / neg) understand.', answer: 'might not' },
-        { pre: '"It might rain data." ➡ He joked it ', post: ' (might) rain data.', answer: 'might' },
+        { pre: '"It might be a trap." ➡ He feared it ', post: ' (might) be a trap.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
+        { pre: '"I might join you." ➡ He said he ', post: ' (might) join us.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
+        { pre: '"They might not understand." ➡ She thought they ', post: ' (might / neg) understand.', answer: 'might not', options: ['might not', 'may not', 'cannot', 'won\'t'] },
+        { pre: '"It might rain data." ➡ He joked it ', post: ' (might) rain data.', answer: 'might', options: ['might', 'may', 'will', 'can'] },
       ]
     }
   },
@@ -1278,10 +1278,10 @@ export const slides: SlideData[] = [
     exerciseSet: {
       title: 'Drill 06: Could',
       exercises: [
-        { pre: '"I could do it with my eyes closed." ➡ He boasted he ', post: ' (could) do it.', answer: 'could' },
-        { pre: '"You could have died." ➡ She reminded him he ', post: ' (could) have died.', answer: 'could' },
-        { pre: '"Could you repeat that?" ➡ He asked if I ', post: ' (could) repeat it.', answer: 'could' },
-        { pre: '"Nothing could stop us." ➡ He believed nothing ', post: ' (could) stop them.', answer: 'could' },
+        { pre: '"I could do it with my eyes closed." ➡ He boasted he ', post: ' (could) do it.', answer: 'could', options: ['could', 'can', 'will', 'shall'] },
+        { pre: '"You could have died." ➡ She reminded him he ', post: ' (could) have died.', answer: 'could', options: ['could', 'can', 'may', 'might'] },
+        { pre: '"Could you repeat that?" ➡ He asked if I ', post: ' (could) repeat it.', answer: 'could', options: ['could', 'can', 'should', 'would'] },
+        { pre: '"Nothing could stop us." ➡ He believed nothing ', post: ' (could) stop them.', answer: 'could', options: ['could', 'can', 'will', 'may'] },
       ]
     }
   },
