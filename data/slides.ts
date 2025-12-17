@@ -1285,4 +1285,42 @@ export const slides: SlideData[] = [
       ]
     }
   },
+  
+  // ==========================================
+  // SEGMENT 6: FINAL SIMULATION
+  // ==========================================
+  {
+    id: '6-final',
+    segmentTitle: 'FINAL SIMULATION',
+    slideTitle: 'The Gauntlet',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'ULTIMATE TEST',
+    visualAlt: 'Cyber Brain',
+    exerciseSet: {
+      title: 'Final Exam: Mixed Protocols',
+      exercises: [
+        // 1. Double Backshift (Past Perfect)
+        { pre: 'He said, "I saw the glitch." ➡ He said he ', post: ' the glitch.', answer: 'had seen', options: ['had seen', 'saw', 'has seen', 'sees'] },
+        // 2. Modal (Must -> Had to)
+        { pre: 'She said, "You must login." ➡ She said I ', post: ' login.', answer: 'had to', options: ['had to', 'must', 'have to', 'should'] },
+        // 3. Command (Negative)
+        { pre: 'He shouted, "Don\'t touch!" ➡ He shouted at me ', post: ' touch.', answer: 'not to', options: ['not to', 'to not', 'don\'t', 'no'] },
+        // 4. Future in Past
+        { pre: 'They said, "We will return." ➡ They said they ', post: ' return.', answer: 'would', options: ['would', 'will', 'are going to', 'can'] },
+        // 5. Present Perfect -> Past Perfect
+        { pre: '"I have finished." ➡ He said he ', post: ' finished.', answer: 'had', options: ['had', 'has', 'have', 'was'] },
+        // 6. Universal Truth (Optional Backshift, but usually backshifted in narrative)
+        { pre: '"Water boils at 100C." ➡ He explained that water ', post: ' at 100C.', answer: 'boiled', options: ['boiled', 'boils', 'has boiled', 'boil'] },
+        // 7. Wh- Question
+        { pre: '"Where is the key?" ➡ He asked where the key ', post: '.', answer: 'was', options: ['was', 'is', 'were', 'been'] },
+        // 8. Yes/No Question
+        { pre: '"Are you ready?" ➡ He asked ', post: ' I was ready.', answer: 'if', options: ['if', 'that', 'did', 'what'] },
+        // 9. Passive Voice Reporting
+        { pre: '"The file was deleted." ➡ He reported that the file ', post: ' deleted.', answer: 'had been', options: ['had been', 'was', 'has been', 'is'] },
+        // 10. Conditional Reporting
+        { pre: '"If I knew, I would tell you." ➡ He said if he had known, he ', post: ' told me.', answer: 'would have', options: ['would have', 'would', 'will have', 'had'] },
+      ]
+    }
+  }
 ];

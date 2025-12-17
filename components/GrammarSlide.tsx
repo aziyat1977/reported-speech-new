@@ -11,17 +11,36 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isAnswerRevealed, setIsAnswerRevealed] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
 
   // Reset state when slide data changes
   useEffect(() => {
     setCurrentIndex(0);
-    resetQuestionState();
   }, [data.id]);
+
+  // Handle shuffling and state reset whenever index or slide changes
+  useEffect(() => {
+    resetQuestionState();
+    shuffleCurrentOptions();
+  }, [currentIndex, data.id]);
 
   const resetQuestionState = () => {
     setSelectedOption(null);
     setIsAnswerRevealed(false);
     setIsCorrect(null);
+  };
+
+  const shuffleCurrentOptions = () => {
+    const exercise = data.exerciseSet.exercises[currentIndex];
+    if (exercise) {
+      const options = [...exercise.options];
+      // Fisher-Yates shuffle
+      for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+      }
+      setShuffledOptions(options);
+    }
   };
 
   const currentExercise = data.exerciseSet.exercises[currentIndex];
@@ -81,20 +100,17 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   const handleNext = () => {
     if (currentIndex < data.exerciseSet.exercises.length - 1) {
       setCurrentIndex(prev => prev + 1);
-      resetQuestionState();
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(prev => prev - 1);
-      resetQuestionState();
     }
   };
 
   const handleReveal = () => {
     setIsAnswerRevealed(true);
-    // If nothing was selected, we don't set isCorrect, showing just the correct answer
   };
 
   return (
@@ -166,7 +182,7 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
 
           {/* Options Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-4xl">
-              {currentExercise.options.map((option, idx) => {
+              {shuffledOptions.map((option, idx) => {
                   let optionClass = theme.optionDefault;
                   
                   if (isAnswerRevealed) {
