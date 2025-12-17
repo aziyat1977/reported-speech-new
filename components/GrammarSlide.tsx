@@ -82,7 +82,8 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
   const processAttempt = (exerciseIndex: number, correctAnswer: string, providedText: string, tokenId: string) => {
     if (solvedIndices.includes(exerciseIndex)) return;
 
-    if (providedText === correctAnswer) {
+    // Use trimmed comparison for robustness
+    if (providedText && providedText.trim() === correctAnswer.trim()) {
       // Success
       setSolvedIndices(prev => [...prev, exerciseIndex]);
       setAvailableWords(prev => prev.filter(w => w.id !== tokenId));
@@ -91,14 +92,16 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
     } else {
       // Error
       triggerFeedback(exerciseIndex, 'error');
-      // Keep selection active for easier retries, or clear it? Keeping it is usually friendlier.
+      // Keep selection active for easier retries
     }
   };
 
   // Drag Handlers
   const handleDragStart = (e: React.DragEvent, token: WordToken) => {
+    // Set both custom and standard formats for better browser compatibility
     e.dataTransfer.setData('tokenId', token.id);
     e.dataTransfer.setData('tokenText', token.text);
+    e.dataTransfer.setData('text/plain', token.text); // Standard format
     e.dataTransfer.effectAllowed = 'move';
     setSelectedToken(token); // Auto-select on drag start visually
   };
@@ -110,9 +113,13 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
 
   const handleDrop = (e: React.DragEvent, exerciseIndex: number, correctAnswer: string) => {
     e.preventDefault();
-    const droppedText = e.dataTransfer.getData('tokenText');
+    // Try getting custom data first, fallback to standard text/plain
+    const droppedText = e.dataTransfer.getData('tokenText') || e.dataTransfer.getData('text/plain');
     const droppedId = e.dataTransfer.getData('tokenId');
-    processAttempt(exerciseIndex, correctAnswer, droppedText, droppedId);
+    
+    if (droppedText && droppedId) {
+      processAttempt(exerciseIndex, correctAnswer, droppedText, droppedId);
+    }
   };
 
   // Click/Touch Handlers
@@ -190,7 +197,7 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
                   `}
                 >
                   {isSolved ? (
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 animate-[fadeIn_0.3s_ease-out]">
                       {ex.answer} <Check size={14} className="md:w-4 md:h-4" />
                     </span>
                   ) : feedbackStatus === 'error' ? (
@@ -267,6 +274,10 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
         @keyframes bounce-subtle {
            0%, 100% { transform: translateY(0); }
            50% { transform: translateY(-3px); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(5px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         .animate-bounce-subtle {
           animation: bounce-subtle 1.5s infinite;

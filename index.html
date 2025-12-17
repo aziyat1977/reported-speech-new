@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Neon ESL Deck</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,6 +32,7 @@
         background-color: #050505;
         color: #ffffff;
         overflow: hidden; /* App handles scrolling */
+        touch-action: manipulation; /* Improves tap responsiveness */
       }
       /* Custom scrollbar for cyberpunk look */
       ::-webkit-scrollbar {
@@ -46,6 +47,14 @@
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
+      }
+      
+      /* Safe Area Utilities for Notched Devices */
+      .safe-area-bottom {
+        padding-bottom: env(safe-area-inset-bottom, 20px);
+      }
+      .safe-area-top {
+        padding-top: env(safe-area-inset-top, 20px);
       }
     </style>
   <script type="importmap">
