@@ -767,4 +767,522 @@ export const slides: SlideData[] = [
       { title: 'Ex 6/7', text: 'apologized | had made | apologize | said' },
     ]
   },
+
+  // ==========================================
+  // SEGMENT 4: SYSTEM MASTERY (TENSES)
+  // ==========================================
+
+  // --- 1: PRESENT SIMPLE ---
+  {
+    id: '4-concept-1',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Present Simple',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 01',
+    concept: {
+      title: 'Present Simple ➡ Past Simple',
+      explanation: 'Permanent states or habits move one step back.',
+      formula: ['Subject', 'said', 'Subject', 'VERB-ED (Past)'],
+      example: { direct: 'I access the mainframe.', reported: 'He said he accessed the mainframe.' }
+    }
+  },
+  {
+    id: '4-ex-1',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Present Simple',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Code Rain',
+    exerciseSet: {
+      title: 'Drill 01: Present Simple',
+      exercises: [
+        { pre: 'The Netrunner said, "I write code daily." ➡ He said he ', post: ' code daily.', answer: 'wrote' },
+        { pre: 'She said, "The server crashes often." ➡ She said the server ', post: ' often.', answer: 'crashed' },
+        { pre: 'He said, "I know the password." ➡ He said he ', post: ' the password.', answer: 'knew' },
+        { pre: 'They said, "We work in the shadows." ➡ They said they ', post: ' in the shadows.', answer: 'worked' },
+      ]
+    }
+  },
+
+  // --- 2: PRESENT CONTINUOUS ---
+  {
+    id: '4-concept-2',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Present Continuous',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 02',
+    concept: {
+      title: 'Present Cont. ➡ Past Cont.',
+      explanation: 'Actions happening now become actions happening then.',
+      formula: ['am / is / are', '+ ING', '➡', 'WAS / WERE + ING'],
+      example: { direct: 'I am bypassing the firewall.', reported: 'He said he was bypassing it.' }
+    }
+  },
+  {
+    id: '4-ex-2',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Present Continuous',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Hacker typing',
+    exerciseSet: {
+      title: 'Drill 02: Present Continuous',
+      exercises: [
+        { pre: '"I am downloading the file." ➡ He said he ', post: ' (download) it.', answer: 'was downloading' },
+        { pre: '"We are tracking the signal." ➡ They said they ', post: ' (track) it.', answer: 'were tracking' },
+        { pre: '"She is decrypting the key." ➡ He said she ', post: ' (decrypt) it.', answer: 'was decrypting' },
+        { pre: '"I am not listening." ➡ He said he ', post: ' (listen / neg).', answer: 'wasn\'t listening' },
+      ]
+    }
+  },
+
+  // --- 3: PRESENT PERFECT ---
+  {
+    id: '4-concept-3',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Present Perfect',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 03',
+    concept: {
+      title: 'Present Perfect ➡ Past Perfect',
+      explanation: 'Recent completions shift further back.',
+      formula: ['have / has', '+ P.P.', '➡', 'HAD + P.P.'],
+      example: { direct: 'I have uploaded the virus.', reported: 'He said he had uploaded the virus.' }
+    }
+  },
+  {
+    id: '4-ex-3',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Present Perfect',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Virus Upload Complete',
+    exerciseSet: {
+      title: 'Drill 03: Present Perfect',
+      exercises: [
+        { pre: '"I have finished the scan." ➡ He said he ', post: ' (finish) the scan.', answer: 'had finished' },
+        { pre: '"We have breached the gate." ➡ They said they ', post: ' (breach) the gate.', answer: 'had breached' },
+        { pre: '"She has lost the data." ➡ He said she ', post: ' (lose) the data.', answer: 'had lost' },
+        { pre: '"I have never seen this code." ➡ He said he ', post: ' (see / never) that code.', answer: 'had never seen' },
+      ]
+    }
+  },
+
+  // --- 4: PAST SIMPLE ---
+  {
+    id: '4-concept-4',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Past Simple',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 04',
+    concept: {
+      title: 'Past Simple ➡ Past Perfect',
+      explanation: 'Finished past actions shift to "the past of the past".',
+      formula: ['VERB-ED', '➡', 'HAD + P.P.'],
+      example: { direct: 'I deleted the logs.', reported: 'He said he had deleted the logs.' }
+    }
+  },
+  {
+    id: '4-ex-4',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Past Simple',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Deleted Files',
+    exerciseSet: {
+      title: 'Drill 04: Past Simple',
+      exercises: [
+        { pre: '"I stole the chip." ➡ He admitted he ', post: ' (steal) the chip.', answer: 'had stolen' },
+        { pre: '"We found the glitch." ➡ They said they ', post: ' (find) the glitch.', answer: 'had found' },
+        { pre: '"The system crashed." ➡ He reported that the system ', post: ' (crash).', answer: 'had crashed' },
+        { pre: '"I didn\'t do it." ➡ He claimed he ', post: ' (do / neg) it.', answer: 'hadn\'t done' },
+      ]
+    }
+  },
+
+  // --- 5: PAST CONTINUOUS ---
+  {
+    id: '4-concept-5',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Past Continuous',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 05',
+    concept: {
+      title: 'Past Cont. ➡ Past Perfect Cont.',
+      explanation: 'Actions in progress in the past become actions that had been in progress.',
+      formula: ['was / were', '+ ING', '➡', 'HAD BEEN + ING'],
+      example: { direct: 'I was scanning the ports.', reported: 'He said he had been scanning the ports.' }
+    }
+  },
+  {
+    id: '4-ex-5',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Past Continuous',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Scanning Animation',
+    exerciseSet: {
+      title: 'Drill 05: Past Continuous',
+      exercises: [
+        { pre: '"I was running a diagnostic." ➡ He said he ', post: ' (run) a diagnostic.', answer: 'had been running' },
+        { pre: '"We were waiting for the signal." ➡ They said they ', post: ' (wait).', answer: 'had been waiting' },
+        { pre: '"She was coding all night." ➡ He said she ', post: ' (code) all night.', answer: 'had been coding' },
+        { pre: '"It was raining in the simulation." ➡ He said it ', post: ' (rain).', answer: 'had been raining' },
+      ]
+    }
+  },
+
+  // --- 6: PAST PERFECT ---
+  {
+    id: '4-concept-6',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Past Perfect',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 06',
+    concept: {
+      title: 'Past Perfect ➡ Past Perfect',
+      explanation: 'No change! You cannot go further back than the Past Perfect.',
+      formula: ['HAD + P.P.', '➡', 'HAD + P.P. (No Change)'],
+      example: { direct: 'I had already encrypted it.', reported: 'He said he had already encrypted it.' }
+    }
+  },
+  {
+    id: '4-ex-6',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Past Perfect',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Encrypted Lock',
+    exerciseSet: {
+      title: 'Drill 06: Past Perfect',
+      exercises: [
+        { pre: '"I had seen the error before." ➡ He said he ', post: ' (see) it before.', answer: 'had seen' },
+        { pre: '"She had left the network." ➡ He said she ', post: ' (leave) the network.', answer: 'had left' },
+        { pre: '"We had prepared the trap." ➡ They said they ', post: ' (prepare) the trap.', answer: 'had prepared' },
+        { pre: '"The bot had failed twice." ➡ He noted the bot ', post: ' (fail) twice.', answer: 'had failed' },
+      ]
+    }
+  },
+
+  // --- 7: FUTURE SIMPLE ---
+  {
+    id: '4-concept-7',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Future Simple',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 07',
+    concept: {
+      title: 'Future (Will) ➡ Conditional (Would)',
+      explanation: 'The future seen from the past becomes "would".',
+      formula: ['WILL + Verb', '➡', 'WOULD + Verb'],
+      example: { direct: 'I will shut it down.', reported: 'He said he would shut it down.' }
+    }
+  },
+  {
+    id: '4-ex-7',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Future Simple',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Futuristic City',
+    exerciseSet: {
+      title: 'Drill 07: Future Simple',
+      exercises: [
+        { pre: '"I will hack the mainframe." ➡ He said he ', post: ' (hack) it.', answer: 'would hack' },
+        { pre: '"They will never find us." ➡ She said they ', post: ' (find / never) them.', answer: 'would never find' },
+        { pre: '"It will be dangerous." ➡ He warned it ', post: ' (be) dangerous.', answer: 'would be' },
+        { pre: '"I won\'t fail." ➡ He promised he ', post: ' (fail / neg).', answer: 'wouldn\'t fail' },
+      ]
+    }
+  },
+
+  // --- 8: FUTURE CONTINUOUS ---
+  {
+    id: '4-concept-8',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Future Continuous',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 08',
+    concept: {
+      title: 'Future Cont. ➡ Conditional Cont.',
+      explanation: '"Will be doing" becomes "Would be doing".',
+      formula: ['WILL BE + ING', '➡', 'WOULD BE + ING'],
+      example: { direct: 'I will be waiting.', reported: 'He said he would be waiting.' }
+    }
+  },
+  {
+    id: '4-ex-8',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Future Continuous',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Waiting Cursor',
+    exerciseSet: {
+      title: 'Drill 08: Future Continuous',
+      exercises: [
+        { pre: '"I will be monitoring the feed." ➡ He said he ', post: ' (monitor) it.', answer: 'would be monitoring' },
+        { pre: '"We will be moving fast." ➡ They said they ', post: ' (move) fast.', answer: 'would be moving' },
+        { pre: '"She will be expecting us." ➡ He said she ', post: ' (expect) them.', answer: 'would be expecting' },
+        { pre: '"The system will be updating." ➡ It said the system ', post: ' (update).', answer: 'would be updating' },
+      ]
+    }
+  },
+
+  // --- 9: FUTURE PERFECT ---
+  {
+    id: '4-concept-9',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Tense: Future Perfect',
+    theme: 'green',
+    type: 'concept',
+    headline: 'TENSE DRILL 09',
+    concept: {
+      title: 'Future Perf. ➡ Conditional Perf.',
+      explanation: '"Will have done" becomes "Would have done".',
+      formula: ['WILL HAVE + P.P.', '➡', 'WOULD HAVE + P.P.'],
+      example: { direct: 'I will have escaped.', reported: 'He said he would have escaped.' }
+    }
+  },
+  {
+    id: '4-ex-9',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Future Perfect',
+    theme: 'green',
+    type: 'grammar',
+    headline: 'MATRIX UPLOAD',
+    visualAlt: 'Escape Pod',
+    exerciseSet: {
+      title: 'Drill 09: Future Perfect',
+      exercises: [
+        { pre: '"I will have finished by noon." ➡ He said he ', post: ' (finish) by noon.', answer: 'would have finished' },
+        { pre: '"We will have destroyed the evidence." ➡ They said they ', post: ' (destroy) it.', answer: 'would have destroyed' },
+        { pre: '"The virus will have spread." ➡ He noted the virus ', post: ' (spread).', answer: 'would have spread' },
+        { pre: '"I will have left the city." ➡ He said he ', post: ' (leave) the city.', answer: 'would have left' },
+      ]
+    }
+  },
+
+  // ==========================================
+  // SEGMENT 5: SYSTEM MASTERY (MODALS)
+  // ==========================================
+
+  // --- MODAL 1: CAN ---
+  {
+    id: '5-concept-1',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Modal: Can',
+    theme: 'blue',
+    type: 'concept',
+    headline: 'MODAL DRILL 01',
+    concept: {
+      title: 'Can ➡ Could',
+      explanation: 'Ability or possibility in the past.',
+      formula: ['CAN', '➡', 'COULD'],
+      example: { direct: 'I can see the code.', reported: 'He said he could see the code.' }
+    }
+  },
+  {
+    id: '5-ex-1',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Can',
+    theme: 'blue',
+    type: 'grammar',
+    headline: 'SYSTEM LOGIC',
+    visualAlt: 'Binary Eye',
+    exerciseSet: {
+      title: 'Drill 01: Can',
+      exercises: [
+        { pre: '"I can bypass the lock." ➡ He said he ', post: ' (can) bypass it.', answer: 'could' },
+        { pre: '"You can\'t stop us." ➡ She said we ', post: ' (can / neg) stop them.', answer: 'couldn\'t' },
+        { pre: '"Can you help me?" ➡ He asked if I ', post: ' (can) help him.', answer: 'could' },
+        { pre: '"It can happen anytime." ➡ He warned it ', post: ' (can) happen anytime.', answer: 'could' },
+      ]
+    }
+  },
+
+  // --- MODAL 2: MAY ---
+  {
+    id: '5-concept-2',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Modal: May',
+    theme: 'blue',
+    type: 'concept',
+    headline: 'MODAL DRILL 02',
+    concept: {
+      title: 'May ➡ Might',
+      explanation: 'Possibility shifts from may to might.',
+      formula: ['MAY', '➡', 'MIGHT'],
+      example: { direct: 'It may crash.', reported: 'He said it might crash.' }
+    }
+  },
+  {
+    id: '5-ex-2',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: May',
+    theme: 'blue',
+    type: 'grammar',
+    headline: 'SYSTEM LOGIC',
+    visualAlt: 'System Error',
+    exerciseSet: {
+      title: 'Drill 02: May',
+      exercises: [
+        { pre: '"We may be late." ➡ They said they ', post: ' (may) be late.', answer: 'might' },
+        { pre: '"The file may contain malware." ➡ He warned the file ', post: ' (may) contain malware.', answer: 'might' },
+        { pre: '"I may not return." ➡ He said he ', post: ' (may / neg) return.', answer: 'might not' },
+        { pre: '"May I enter?" ➡ He asked if he ', post: ' (may) enter.', answer: 'might' },
+      ]
+    }
+  },
+
+  // --- MODAL 3: MUST ---
+  {
+    id: '5-concept-3',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Modal: Must',
+    theme: 'blue',
+    type: 'concept',
+    headline: 'MODAL DRILL 03',
+    concept: {
+      title: 'Must ➡ Had To',
+      explanation: 'Obligation in the past uses "had to".',
+      formula: ['MUST', '➡', 'HAD TO'],
+      example: { direct: 'You must go now.', reported: 'He said I had to go then.' }
+    }
+  },
+  {
+    id: '5-ex-3',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Must',
+    theme: 'blue',
+    type: 'grammar',
+    headline: 'SYSTEM LOGIC',
+    visualAlt: 'Access Denied',
+    exerciseSet: {
+      title: 'Drill 03: Must',
+      exercises: [
+        { pre: '"I must finish this." ➡ He said he ', post: ' (must) finish it.', answer: 'had to' },
+        { pre: '"You must be careful." ➡ She told me I ', post: ' (must) be careful.', answer: 'had to' },
+        { pre: '"We must delete the logs." ➡ They realized they ', post: ' (must) delete them.', answer: 'had to' },
+        { pre: '"I must not fail." ➡ He knew he ', post: ' (must / neg) fail.', answer: 'must not' }, 
+      ]
+    }
+  },
+
+  // --- MODAL 4: SHOULD ---
+  {
+    id: '5-concept-4',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Modal: Should',
+    theme: 'blue',
+    type: 'concept',
+    headline: 'MODAL DRILL 04',
+    concept: {
+      title: 'Should ➡ Should',
+      explanation: 'Advice stays the same. No change.',
+      formula: ['SHOULD', '➡', 'SHOULD (No Change)'],
+      example: { direct: 'You should hide.', reported: 'He said I should hide.' }
+    }
+  },
+  {
+    id: '5-ex-4',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Should',
+    theme: 'blue',
+    type: 'grammar',
+    headline: 'SYSTEM LOGIC',
+    visualAlt: 'Shield',
+    exerciseSet: {
+      title: 'Drill 04: Should',
+      exercises: [
+        { pre: '"We should encrypt the data." ➡ They agreed they ', post: ' (should) encrypt it.', answer: 'should' },
+        { pre: '"You shouldn\'t touch that." ➡ He said I ', post: ' (should / neg) touch it.', answer: 'shouldn\'t' },
+        { pre: '"Should we call for backup?" ➡ He asked if they ', post: ' (should) call.', answer: 'should' },
+        { pre: '"I should have known." ➡ He admitted he ', post: ' (should) have known.', answer: 'should' },
+      ]
+    }
+  },
+
+  // --- MODAL 5: MIGHT ---
+  {
+    id: '5-concept-5',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Modal: Might',
+    theme: 'blue',
+    type: 'concept',
+    headline: 'MODAL DRILL 05',
+    concept: {
+      title: 'Might ➡ Might',
+      explanation: 'Possibility stays the same. No change.',
+      formula: ['MIGHT', '➡', 'MIGHT (No Change)'],
+      example: { direct: 'It might work.', reported: 'He said it might work.' }
+    }
+  },
+  {
+    id: '5-ex-5',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Might',
+    theme: 'blue',
+    type: 'grammar',
+    headline: 'SYSTEM LOGIC',
+    visualAlt: 'Quantum Chip',
+    exerciseSet: {
+      title: 'Drill 05: Might',
+      exercises: [
+        { pre: '"It might be a trap." ➡ He feared it ', post: ' (might) be a trap.', answer: 'might' },
+        { pre: '"I might join you." ➡ He said he ', post: ' (might) join us.', answer: 'might' },
+        { pre: '"They might not understand." ➡ She thought they ', post: ' (might / neg) understand.', answer: 'might not' },
+        { pre: '"It might rain data." ➡ He joked it ', post: ' (might) rain data.', answer: 'might' },
+      ]
+    }
+  },
+
+  // --- MODAL 6: COULD ---
+  {
+    id: '5-concept-6',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Modal: Could',
+    theme: 'blue',
+    type: 'concept',
+    headline: 'MODAL DRILL 06',
+    concept: {
+      title: 'Could ➡ Could',
+      explanation: 'Past ability or possibility stays the same. No change.',
+      formula: ['COULD', '➡', 'COULD (No Change)'],
+      example: { direct: 'I could help.', reported: 'He said he could help.' }
+    }
+  },
+  {
+    id: '5-ex-6',
+    segmentTitle: 'SYSTEM MASTERY',
+    slideTitle: 'Exercise: Could',
+    theme: 'blue',
+    type: 'grammar',
+    headline: 'SYSTEM LOGIC',
+    visualAlt: 'Helping Hand',
+    exerciseSet: {
+      title: 'Drill 06: Could',
+      exercises: [
+        { pre: '"I could do it with my eyes closed." ➡ He boasted he ', post: ' (could) do it.', answer: 'could' },
+        { pre: '"You could have died." ➡ She reminded him he ', post: ' (could) have died.', answer: 'could' },
+        { pre: '"Could you repeat that?" ➡ He asked if I ', post: ' (could) repeat it.', answer: 'could' },
+        { pre: '"Nothing could stop us." ➡ He believed nothing ', post: ' (could) stop them.', answer: 'could' },
+      ]
+    }
+  },
 ];
