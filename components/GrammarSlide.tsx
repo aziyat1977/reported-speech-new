@@ -151,16 +151,16 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
       
       {/* Header */}
       <div className="flex justify-between items-end mb-4 md:mb-6 border-b border-gray-800 pb-2 md:pb-4 shrink-0">
-         <h2 className={`text-xl md:text-4xl font-bold font-mono ${theme.accent} uppercase tracking-tight truncate`}>
+         <h2 className={`text-3xl md:text-5xl font-bold font-mono ${theme.accent} uppercase tracking-tight truncate`}>
           {data.headline}
         </h2>
-        <span className="hidden sm:inline-block text-gray-500 font-mono text-xs md:text-sm animate-pulse border px-2 py-1 rounded border-gray-800 shrink-0 ml-2">
+        <span className="hidden sm:inline-block text-gray-500 font-mono text-sm md:text-base animate-pulse border px-3 py-1 rounded border-gray-800 shrink-0 ml-2">
           PROTOCOL: {data.exerciseSet.title}
         </span>
       </div>
 
       {/* Main Exercise Area (Scrollable) */}
-      <div className="flex-grow overflow-y-auto pr-1 md:pr-2 space-y-3 md:space-y-4 mb-[140px] md:mb-32 custom-scrollbar">
+      <div className="flex-grow overflow-y-auto pr-1 md:pr-2 space-y-4 md:space-y-6 mb-[150px] md:mb-40 custom-scrollbar">
         {data.exerciseSet.exercises.map((ex, idx) => {
           const isSolved = solvedIndices.includes(idx);
           const feedbackStatus = feedback[idx];
@@ -175,12 +175,12 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
             <div 
               key={idx} 
               className={`
-                flex flex-wrap items-center gap-2 md:gap-3 p-3 md:p-4 rounded-lg border border-gray-800/50 
+                flex flex-wrap items-center gap-2 md:gap-4 p-4 md:p-6 rounded-lg border border-gray-800/50 
                 bg-cyber-panel/40 backdrop-blur-sm transition-all duration-300
                 ${isSolved ? 'opacity-70' : 'hover:bg-white/5'}
               `}
             >
-              <div className="text-base md:text-2xl leading-relaxed font-light tracking-wide text-gray-300 flex flex-wrap items-baseline gap-2 w-full">
+              <div className="text-2xl md:text-4xl leading-relaxed font-light tracking-wide text-gray-300 flex flex-wrap items-baseline gap-3 w-full">
                 <span className="break-words">{ex.pre}</span>
                 
                 {/* DROP ZONE */}
@@ -189,7 +189,7 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
                   onDrop={(e) => handleDrop(e, idx, ex.answer)}
                   onClick={() => handleSlotClick(idx, ex.answer)}
                   className={`
-                    relative min-w-[80px] md:min-w-[100px] h-8 md:h-10 px-2 md:px-4 rounded border-b-2 flex items-center justify-center
+                    relative min-w-[120px] md:min-w-[160px] h-12 md:h-16 px-4 md:px-6 rounded border-b-4 flex items-center justify-center
                     transition-all duration-300 font-mono font-bold select-none cursor-pointer
                     ${slotClass}
                     ${!isSolved && !selectedToken ? 'animate-pulse' : ''}
@@ -198,12 +198,12 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
                 >
                   {isSolved ? (
                     <span className="flex items-center gap-2 animate-[fadeIn_0.3s_ease-out]">
-                      {ex.answer} <Check size={14} className="md:w-4 md:h-4" />
+                      {ex.answer} <Check size={24} className="md:w-6 md:h-6" />
                     </span>
                   ) : feedbackStatus === 'error' ? (
-                    <AlertCircle size={18} className="text-red-500" />
+                    <AlertCircle size={24} className="text-red-500" />
                   ) : (
-                    <span className="opacity-30 text-[10px] md:text-sm whitespace-nowrap">
+                    <span className="opacity-30 text-sm md:text-lg whitespace-nowrap">
                       {selectedToken ? 'TAP HERE' : 'DROP'}
                     </span>
                   )}
@@ -222,16 +222,16 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
       </div>
 
       {/* Fixed Word Bank (Bottom) */}
-      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-cyber-dark/95 border-t border-gray-800 backdrop-blur-xl z-20 pb-safe-bottom">
+      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 bg-cyber-dark/95 border-t border-gray-800 backdrop-blur-xl z-20 pb-safe-bottom">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[10px] md:text-xs text-gray-500 font-mono uppercase mb-2 md:mb-3 flex items-center gap-2">
-            {selectedToken ? <MousePointerClick size={12} className="text-white animate-pulse" /> : <GripVertical size={12} />} 
+          <p className="text-sm md:text-base text-gray-500 font-mono uppercase mb-3 md:mb-4 flex items-center gap-2">
+            {selectedToken ? <MousePointerClick size={16} className="text-white animate-pulse" /> : <GripVertical size={16} />} 
             {selectedToken ? 'SELECT TARGET SLOT...' : 'TAP OR DRAG FRAGMENTS'}
           </p>
           
-          <div className="flex flex-wrap gap-2 md:gap-3 min-h-[50px] md:min-h-[60px] items-center content-center justify-start overflow-x-auto max-h-[120px] custom-scrollbar pb-2">
+          <div className="flex flex-wrap gap-3 md:gap-4 min-h-[60px] md:min-h-[80px] items-center content-center justify-start overflow-x-auto max-h-[160px] custom-scrollbar pb-2">
             {availableWords.length === 0 ? (
-              <div className={`w-full text-center font-mono text-xs md:text-sm ${theme.accent} animate-pulse`}>
+              <div className={`w-full text-center font-mono text-lg md:text-xl ${theme.accent} animate-pulse`}>
                 >> ALL SYSTEMS OPERATIONAL. SEQUENCE COMPLETE.
               </div>
             ) : (
@@ -244,7 +244,7 @@ const GrammarSlide: React.FC<GrammarSlideProps> = ({ data }) => {
                     onDragStart={(e) => handleDragStart(e, token)}
                     onClick={() => handleTokenClick(token)}
                     className={`
-                      px-3 py-1.5 md:px-4 md:py-2 rounded font-mono text-sm md:text-base font-bold cursor-pointer
+                      px-4 py-2 md:px-6 md:py-3 rounded font-mono text-lg md:text-2xl font-bold cursor-pointer
                       transition-all duration-200 border select-none
                       ${isSelected ? `${theme.tokenSelected} scale-105` : `${theme.tokenBg} hover:scale-105 active:scale-95 shadow-lg`}
                     `}

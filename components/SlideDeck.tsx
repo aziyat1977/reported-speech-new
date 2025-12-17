@@ -51,16 +51,16 @@ const SlideDeck: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 pointer-events-none"></div>
 
       {/* Header */}
-      <header className="flex justify-between items-center p-3 md:p-4 border-b border-gray-800 z-10 bg-cyber-panel/80 backdrop-blur-md shrink-0">
-        <div className="flex items-center gap-2 md:gap-3 overflow-hidden">
-          <Terminal className={`w-5 h-5 md:w-6 md:h-6 ${themeText} shrink-0`} />
-          <h1 className="text-sm md:text-xl font-bold font-mono tracking-wider truncate">
-            NEON ESL <span className="text-gray-500 mx-1 md:mx-2">//</span> <span className={`${themeText}`}>{currentSlide.segmentTitle}</span>
+      <header className="flex justify-between items-center p-4 md:p-6 border-b border-gray-800 z-10 bg-cyber-panel/80 backdrop-blur-md shrink-0">
+        <div className="flex items-center gap-3 md:gap-4 overflow-hidden">
+          <Terminal className={`w-6 h-6 md:w-8 md:h-8 ${themeText} shrink-0`} />
+          <h1 className="text-xl md:text-3xl font-bold font-mono tracking-wider truncate">
+            NEON ESL <span className="text-gray-500 mx-2">//</span> <span className={`${themeText}`}>{currentSlide.segmentTitle}</span>
           </h1>
         </div>
-        <div className="flex flex-col items-end shrink-0 ml-2">
-          <span className="text-[10px] md:text-xs text-gray-400 font-mono uppercase hidden sm:block">Current Protocol</span>
-          <span className="text-xs md:text-sm font-bold text-right max-w-[120px] md:max-w-none truncate">{currentSlide.slideTitle}</span>
+        <div className="flex flex-col items-end shrink-0 ml-4">
+          <span className="text-sm md:text-base text-gray-400 font-mono uppercase hidden sm:block">Current Protocol</span>
+          <span className="text-lg md:text-2xl font-bold text-right max-w-[150px] md:max-w-none truncate">{currentSlide.slideTitle}</span>
         </div>
       </header>
 
@@ -75,29 +75,29 @@ const SlideDeck: React.FC = () => {
       </main>
 
       {/* Footer / Controls */}
-      <footer className="p-3 md:p-4 border-t border-gray-800 z-10 bg-cyber-panel/80 backdrop-blur-md shrink-0 safe-area-bottom">
-        <div className="flex items-center justify-between gap-4">
+      <footer className="p-4 md:p-6 border-t border-gray-800 z-10 bg-cyber-panel/80 backdrop-blur-md shrink-0 safe-area-bottom">
+        <div className="flex items-center justify-between gap-6">
           
           <button 
             onClick={handlePrev}
             disabled={currentSlideIndex === 0}
             className={`
-              flex items-center gap-2 px-3 py-2 md:px-4 rounded-md font-mono text-xs md:text-sm transition-all
+              flex items-center gap-2 px-4 py-3 md:px-6 rounded-md font-mono text-sm md:text-lg transition-all
               ${currentSlideIndex === 0 ? 'text-gray-600 cursor-not-allowed' : 'text-white hover:bg-white/10 active:scale-95'}
             `}
           >
-            <ChevronLeft size={16} className="md:w-[18px] md:h-[18px]" /> <span className="hidden sm:inline">PREV</span>
+            <ChevronLeft size={20} className="md:w-[24px] md:h-[24px]" /> <span className="hidden sm:inline">PREV</span>
           </button>
 
           {/* Progress Bar */}
-          <div className="flex-grow max-w-2xl h-1 bg-gray-800 rounded-full overflow-hidden relative">
+          <div className="flex-grow max-w-3xl h-2 bg-gray-800 rounded-full overflow-hidden relative">
             <div 
               className={`h-full transition-all duration-300 ${themeColor} shadow-[0_0_10px_currentColor]`}
               style={{ width: `${progress}%` }}
             />
           </div>
           
-          <div className="font-mono text-[10px] md:text-xs text-gray-500 min-w-[40px] md:min-w-[60px] text-center">
+          <div className="font-mono text-sm md:text-base text-gray-500 min-w-[50px] md:min-w-[80px] text-center">
             {currentSlideIndex + 1} / {slides.length}
           </div>
 
@@ -105,11 +105,11 @@ const SlideDeck: React.FC = () => {
             onClick={handleNext}
             disabled={currentSlideIndex === slides.length - 1}
             className={`
-              flex items-center gap-2 px-3 py-2 md:px-4 rounded-md font-mono text-xs md:text-sm transition-all
+              flex items-center gap-2 px-4 py-3 md:px-6 rounded-md font-mono text-sm md:text-lg transition-all
               ${currentSlideIndex === slides.length - 1 ? 'text-gray-600 cursor-not-allowed' : `${themeText} bg-white/5 hover:bg-white/10 active:scale-95 border border-white/10`}
             `}
           >
-            <span className="hidden sm:inline">NEXT</span> <ChevronRight size={16} className="md:w-[18px] md:h-[18px]" />
+            <span className="hidden sm:inline">NEXT</span> <ChevronRight size={20} className="md:w-[24px] md:h-[24px]" />
           </button>
         </div>
       </footer>

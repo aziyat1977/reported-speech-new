@@ -25,34 +25,34 @@ const AnswerKeySlide: React.FC<AnswerKeySlideProps> = ({ data }) => {
     'from-blue-900/20 to-black';
 
   return (
-    <div className={`h-full flex flex-col items-center justify-center p-4 md:p-12 bg-gradient-radial ${bgGradient} overflow-y-auto`}>
+    <div className={`h-full flex flex-col items-center justify-center p-6 md:p-16 bg-gradient-radial ${bgGradient} overflow-y-auto`}>
       
-      <h2 className={`text-2xl md:text-5xl font-bold mb-8 md:mb-12 font-mono ${accentColor} uppercase tracking-widest text-center`}>
+      <h2 className={`text-4xl md:text-7xl font-bold mb-10 md:mb-16 font-mono ${accentColor} uppercase tracking-widest text-center`}>
         {data.headline}
       </h2>
 
       <div 
-        className={`relative w-full max-w-4xl p-1 bg-gray-900 rounded-xl transition-all duration-700 ${revealed ? borderClass : 'border border-gray-700'}`}
+        className={`relative w-full max-w-5xl p-2 bg-gray-900 rounded-xl transition-all duration-700 ${revealed ? borderClass : 'border-2 border-gray-700'}`}
       >
         {!revealed && (
           <div 
             onClick={() => setRevealed(true)}
             className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm rounded-xl cursor-pointer hover:bg-black/70 transition-colors group"
           >
-            <Lock className={`w-12 h-12 md:w-16 md:h-16 mb-4 ${accentColor} group-hover:scale-110 transition-transform`} />
-            <p className="text-sm md:text-xl font-mono tracking-widest text-white uppercase animate-pulse text-center px-4">
+            <Lock className={`w-16 h-16 md:w-24 md:h-24 mb-6 ${accentColor} group-hover:scale-110 transition-transform`} />
+            <p className="text-xl md:text-3xl font-mono tracking-widest text-white uppercase animate-pulse text-center px-4">
               Click to Decrypt Data
             </p>
           </div>
         )}
 
-        <div className={`bg-black/50 p-4 md:p-8 rounded-lg grid grid-cols-1 gap-4 md:gap-6 ${revealed ? 'opacity-100 blur-0' : 'opacity-20 blur-sm'} transition-all duration-700 max-h-[60vh] overflow-y-auto custom-scrollbar`}>
+        <div className={`bg-black/50 p-6 md:p-10 rounded-lg grid grid-cols-1 gap-6 md:gap-8 ${revealed ? 'opacity-100 blur-0' : 'opacity-20 blur-sm'} transition-all duration-700 max-h-[60vh] overflow-y-auto custom-scrollbar`}>
           {data.solutions.map((sol, idx) => (
-             <div key={idx} className="flex flex-col border-b border-gray-800 pb-2 md:pb-4 last:border-0 last:pb-0">
-               <span className={`text-xs md:text-sm font-bold uppercase tracking-wider mb-1 md:mb-2 ${accentColor}`}>
+             <div key={idx} className="flex flex-col border-b border-gray-800 pb-4 md:pb-6 last:border-0 last:pb-0">
+               <span className={`text-sm md:text-xl font-bold uppercase tracking-wider mb-2 ${accentColor}`}>
                  {sol.title}
                </span>
-               <p className="text-sm md:text-xl font-mono text-white break-words leading-relaxed">
+               <p className="text-xl md:text-3xl font-mono text-white break-words leading-relaxed">
                  {sol.text}
                </p>
              </div>
@@ -60,8 +60,8 @@ const AnswerKeySlide: React.FC<AnswerKeySlideProps> = ({ data }) => {
         </div>
         
         {revealed && (
-          <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-black border border-gray-700 p-1.5 md:p-2 rounded-full">
-            <Unlock className={`w-4 h-4 md:w-6 md:h-6 ${accentColor}`} />
+          <div className="absolute -top-4 -right-4 md:-top-5 md:-right-5 bg-black border-2 border-gray-700 p-2 md:p-3 rounded-full">
+            <Unlock className={`w-6 h-6 md:w-8 md:h-8 ${accentColor}`} />
           </div>
         )}
       </div>

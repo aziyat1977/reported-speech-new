@@ -117,8 +117,8 @@ const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
             <div className="absolute inset-0 pointer-events-none z-20 bg-radial-gradient from-transparent via-transparent to-black/80"></div>
 
             <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-2 md:p-3 z-30 border-t border-gray-800 backdrop-blur-sm">
-                <p className={`font-mono text-[10px] md:text-xs ${theme.accent} uppercase tracking-widest truncate flex items-center gap-2`}>
-                <Zap size={12} className="animate-pulse" /> Visual Feed: {data.visualAlt}
+                <p className={`font-mono text-sm md:text-base ${theme.accent} uppercase tracking-widest truncate flex items-center gap-2`}>
+                <Zap size={16} className="animate-pulse" /> Visual Feed: {data.visualAlt}
                 </p>
             </div>
         </div>
@@ -130,26 +130,26 @@ const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
         {/* Script Header / Controls */}
         <div className="flex items-center justify-between p-3 md:p-4 border-b border-gray-800 bg-black/40 backdrop-blur-sm shrink-0">
              <div className="flex items-center gap-3 overflow-hidden">
-                 <h2 className={`text-lg md:text-2xl font-bold font-mono ${theme.accent} uppercase tracking-tight truncate`}>
+                 <h2 className={`text-2xl md:text-4xl font-bold font-mono ${theme.accent} uppercase tracking-tight truncate`}>
                     {data.headline}
                  </h2>
                  {visibleIndex < data.scriptContent.length && !isPaused && (
-                     <span className="flex h-2 w-2 relative shrink-0">
+                     <span className="flex h-3 w-3 relative shrink-0">
                         <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${theme.ping} opacity-75`}></span>
-                        <span className={`relative inline-flex rounded-full h-2 w-2 ${theme.progress}`}></span>
+                        <span className={`relative inline-flex rounded-full h-3 w-3 ${theme.progress}`}></span>
                      </span>
                  )}
              </div>
              
-             <div className="flex items-center gap-1 md:gap-2 shrink-0">
-                 <button onClick={handleTogglePause} className={`p-2 rounded transition-all active:scale-95 ${theme.button}`} title={isPaused ? "Play" : "Pause"}>
-                     {isPaused ? <Play size={18} /> : <Pause size={18} />}
+             <div className="flex items-center gap-2 md:gap-3 shrink-0">
+                 <button onClick={handleTogglePause} className={`p-3 rounded transition-all active:scale-95 ${theme.button}`} title={isPaused ? "Play" : "Pause"}>
+                     {isPaused ? <Play size={24} /> : <Pause size={24} />}
                  </button>
-                 <button onClick={handleRestart} className={`p-2 rounded text-gray-500 hover:text-white hover:bg-white/10 transition-all active:scale-95`} title="Restart">
-                     <RotateCcw size={18} />
+                 <button onClick={handleRestart} className={`p-3 rounded text-gray-500 hover:text-white hover:bg-white/10 transition-all active:scale-95`} title="Restart">
+                     <RotateCcw size={24} />
                  </button>
-                 <button onClick={handleSkip} className={`p-2 rounded text-gray-500 hover:text-white hover:bg-white/10 transition-all active:scale-95`} title="Show All">
-                     <SkipForward size={18} />
+                 <button onClick={handleSkip} className={`p-3 rounded text-gray-500 hover:text-white hover:bg-white/10 transition-all active:scale-95`} title="Show All">
+                     <SkipForward size={24} />
                  </button>
              </div>
         </div>
@@ -158,7 +158,7 @@ const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
         <div ref={scrollRef} className="flex-grow overflow-y-auto p-4 md:p-6 space-y-4 custom-scrollbar scroll-smooth relative">
             
             {/* Initialization Message */}
-            <div className={`font-mono text-xs md:text-sm ${visibleIndex === 0 ? 'text-white animate-pulse' : 'text-gray-600'} transition-colors duration-500`}>
+            <div className={`font-mono text-base md:text-xl ${visibleIndex === 0 ? 'text-white animate-pulse' : 'text-gray-600'} transition-colors duration-500`}>
                 &gt; INITIALIZING SECURE AUDIO TRANSCRIPT...
             </div>
 
@@ -172,28 +172,28 @@ const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
                     <div key={idx} className={`relative ${isLast ? 'opacity-100' : 'opacity-50'} transition-opacity duration-700`}>
                         {line.speaker === 'Action' ? (
                             <div className="flex gap-3 items-start my-4 group animate-slideInLeft">
-                                <span className="text-gray-600 font-mono text-xs mt-1 shrink-0 select-none">&gt;&gt;</span>
-                                <p className="text-gray-400 italic font-mono text-sm border-l-2 border-gray-700 pl-3 py-1 group-hover:border-gray-500 transition-colors">
+                                <span className="text-gray-600 font-mono text-base mt-1 shrink-0 select-none">&gt;&gt;</span>
+                                <p className="text-gray-400 italic font-mono text-lg md:text-xl border-l-4 border-gray-700 pl-4 py-2 group-hover:border-gray-500 transition-colors">
                                     [{line.text}]
                                 </p>
                             </div>
                         ) : (
-                            <div className="flex flex-col mb-4 animate-slideInLeft">
-                                <div className="flex items-baseline gap-2 mb-1">
-                                    <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wider ${theme.accent} border border-current px-1.5 py-0.5 rounded-[2px] shadow-[0_0_10px_rgba(0,0,0,0.5)]`}>
+                            <div className="flex flex-col mb-6 animate-slideInLeft">
+                                <div className="flex items-baseline gap-3 mb-2">
+                                    <span className={`text-sm md:text-base font-bold uppercase tracking-wider ${theme.accent} border border-current px-2 py-1 rounded-[2px] shadow-[0_0_10px_rgba(0,0,0,0.5)]`}>
                                         {line.speaker}
                                     </span>
                                     {line.action && (
-                                        <span className="text-gray-500 text-[10px] md:text-xs italic">
+                                        <span className="text-gray-500 text-sm md:text-base italic">
                                         * {line.action}
                                         </span>
                                     )}
                                 </div>
-                                <div className="pl-1 border-l border-gray-800 ml-1">
-                                    <p className={`text-base md:text-xl leading-relaxed text-gray-100 font-light`}>
+                                <div className="pl-2 border-l-2 border-gray-800 ml-2">
+                                    <p className={`text-xl md:text-3xl leading-relaxed text-gray-100 font-light`}>
                                         {line.text}
                                         {isLast && !isPaused && visibleIndex < data.scriptContent.length && (
-                                            <span className={`inline-block w-2 h-4 md:h-5 ml-1 align-middle ${theme.progress} animate-blink`}></span>
+                                            <span className={`inline-block w-3 h-6 md:h-8 ml-2 align-middle ${theme.progress} animate-blink`}></span>
                                         )}
                                     </p>
                                 </div>
@@ -204,13 +204,13 @@ const ScriptSlide: React.FC<ScriptSlideProps> = ({ data }) => {
             })}
           
             {visibleIndex >= data.scriptContent.length && (
-               <div className="text-gray-500 font-mono text-xs md:text-sm mt-8 border-t border-gray-800 pt-4 animate-pulse">
+               <div className="text-gray-500 font-mono text-sm md:text-base mt-8 border-t border-gray-800 pt-4 animate-pulse">
                &gt; END OF TRANSMISSION.
                </div>
             )}
             
             {/* Bottom spacer ensures the last element isn't hidden behind potential overlays */}
-            <div className="h-12" />
+            <div className="h-16" />
         </div>
       </div>
 
